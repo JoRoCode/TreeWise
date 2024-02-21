@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>TreeWise</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <a href="/home"><img src="/static/images/cover.png" alt="TreeWise Logo" id="logo"></a>
+            <div>
+                <ul>
+                    <li><a href="/importance">Importance of Tree Identification</a></li>
+                    <li><a href="/species">Colorado Tree Species</a></li>
+                    <li><a href="#">Take a Quiz</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+                <form action="#" id="search">
+                    <input type="search" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="submit" class="button" value="Search">
+                </form>
+            </div>
+            <a href="/user/logout" class="button">Logout</a>
+        </div>
+        <div class="opaq_back">
+            <div class="main-info">
+                <h1>Colorado Tree Species</h1>
+                <div  class="block">
+                    {% for tree in trees %}
+                    <a href="/species/{{ tree.common_name }}">{{ tree.common_name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- Format for adding images -->
+                    <!-- <ul>
+                        <li><h2>Abies - Fir</h2></li>
+                            <li><a href="#">Abies Mill - Fir</a></li>
+                            <li><a href="#">Abies Concolor - White Fir</a></li>
+                            <li><a href="#">Abies Nutt - Subalpine Fir</a></li>
+                            <li><a href="/user/account">Abies Nutt var arizonicia - Corkbark Fir</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Acer - Maple</h2>
+                    <a href="#">Acer glabrum Torr. var. glabrum - Rocky mountain Maple</a>
+                    <a href="#">Acer grandidentatum Nutt. - Bigtooth Maple</a>
+                    <a href="#">Acer negundo L. - Boxelder</a>
+                    <a href="#">Acer platanoides - Norway Maple</a>
+                    <a href="#">Acer rubrum - Red Maple</a>
+                    <a href="#">Acer saccharinum - Silver Maple</a>
+                    <a href="#">Acer saccharum - Sugar Maple</a>
+                    <a href="#">Acer x freemanii - Autumn Blaze Maple</a>
+                    <h2>Ailanthus - Tree of Heaven</h2>
+                    <a href="#">	Ailanthus altissima - Tree of Heaven</a>
+                    <h2>Alnus - Alder</h2>
+                    <a href="#">	Alnus Mill.</a>
+                    <h2>Amelanchier - Serviceberry</h2>
+                    <a href="#">Amelanchier Medik. - Serviceberry</a>
+                    <a href="#">Amelanchier alnifolia - Saskatoon Serviceberry</a>
+                    <a href="#">Amelanchier utahensis Koehne Utah Serviceberry</a>
+                    <h2>Betula - Birch</h2>
+                    <a href="#">Betula L. - Birch</a>
+                    <a href="#">Betula occidentalis - Water birch</a>
+                    <a href="#">Betula papyrifera Marshall - Paper Birch</a>
+                    <a href="#">Betula pendula Roth - European White Birch</a>
+                    <h2>Catalpa - Catalpa</h2>
+                    <a href="#">Catalpa speciosa (Warder) Warder ex Engelm - Northern Catalpa</a>
+                    <h2>Celtis - Hackberry</h2>
+                    <a href="#">Celtis laevigata Willd. var. reticulata - Netleaf hackberry</a>
+                    <a href="#">Celtis occidentalis  - Common Hackberry</a>
+                    <h2>Cercocarpus - Mahogany</h2>
+                    <a href="#">Cercocarpus ledifolius - Curl-Leaf Mountain Mahogany</a>
+                    <a href="#">Cercocarpus Kunth - Mountain Mahogany</a>
+                    <a href="#">Cercocarpus montanus - Alderleaf Mountain Magogany</a>
+                    <h2>Corylus - Hazelnut</h2>
+                    <a href="#">Corylus cornuta Marshall - Beaked Hazelnut</a>
+                    <h2>Crataegus - Hawthorn</h2>
+                    <a href="#">Crataegus - Hawthorn</a>
+                    <a href="#">Crataegus chrysocarpa Ashe -Fireberry Hawthorn</a>
+                    <a href="#">Crataegus erythropoda Ashe - Cerro Hawthorn</a>
+                    <a href="#">Crataegus rivularis - River Hawthorn</a>
+                    <a href="#">Crataegus saligna Greene - Willow Hathorn</a>
+                    <h2>Elaeagnus - Olive</h2>
+                    <a href="#">Elaeagnus angustifolia - Russian Olive</a>
+                    <h2>Fraxinus - Ash</h2>
+                    <a href="#">Fraxinus americana - White Ash</a>
+                    <a href="#">Fraxinus pennsylvanica Marshall - Green Ash</a>
+                    <h2>Gleditsia - Locust</h2>
+                    <a href="#">Gleditsia triacanthos - Honeylocust</a>
+                    <h2>Juglans - Walnut</h2>
+                    <a href="#">Juglans nigra - Black Walnut</a>
+                    <h2>Juniperus - Juniper</h2>
+                    <a href="#">Juniperus communis - Common Juniper</a>
+                    <a href="#">Juniperus scopulorum - Rocky Mountain Juniper</a>
+                    <a href="#">Juniperus virginiana - Eastern Red Cedar</a>
+                    <h2>Malus - Apple</h2>
+                    <a href="#"> Malus - Crabapple</a>
+                    <a href="#">Malus domestica - Apple</a>
+                    <h2>Morus - Mulberry</h2>
+                    <a href="#">Morus Alba - White Mulberry</a>
+                    <h2>Picea - Spruce</h2>
+                    <a href="#">Picea engelmannii Parry - Engelmann Spruce</a>
+                    <a href="#">Picea pungens - Blue Spruce</a>
+                    <h2>Pinus - Pine</h2>
+                    <a href="#">Pinus aristata - Bristlecone Pine</a>
+                    <a href="#"></a>
+-->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

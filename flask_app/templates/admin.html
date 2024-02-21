@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>TreeWise</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <a href="/home"><img src="/static/images/cover.png" alt="TreeWise Logo" id="logo"></a>
+            <div>
+                <ul>
+                    <li><a href="/importance">Importance of Tree Identification</a></li>
+                    <li><a href="/species">Colorado Tree Species</a></li>
+                    <li><a href="#">Take a Quiz</a></li>
+                    <li><a href="/user/account">Account</a></li>
+                </ul>
+                <form action="#" id="search">
+                    <input type="search" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="submit" class="button" value="Search">
+                </form>
+            </div>
+            <a href="/user/logout" class="button">Logout</a>
+        </div>
+        <div class="opaq_back">
+            <div class="main-info flex">
+                <div class="admin_left">
+                    <div class="create_tree">
+                        <h2>Add Tree To Database</h2>
+                        <form action="/create/tree" method="post" class="block">
+                            <label > Common Name
+                                <input type="text" name="common_name">
+                            </label>
+                            <label > Scientific Name
+                                <input type="text" name="scientific_name">
+                            </label>
+                            <label > Order
+                                <input type="text" name="tree_order">
+                            </label>
+                            <label > Family
+                                <input type="text" name="family">
+                            </label>
+                            <label > Genus
+                                <input type="text" name="genus">
+                            </label>
+                            <label > Species
+                                <input type="text" name="species">
+                            </label>
+                            <label > Deciduous or Evergreen
+                                <input type="text" name="deciduous">
+                            </label>
+                            <label > Mature Height
+                                <input type="text" name="mature_height">
+                            </label>
+                            <label > Mature Diameter
+                                <input type="text" name="mature_diameter">
+                            </label>
+                            <label > Growth Rate
+                                <input type="text" name="growth_rate">
+                            </label>
+                            <label > Hardiness Zone
+                                <input type="text" name="hardiness_zone">
+                            </label>
+                            <label > Leaf Type
+                                <input type="text" name="leaf_type">
+                            </label>
+                            <label > Spring Foliage Color
+                                <input type="text" name="spring_foliage">
+                            </label>
+                            <label > Fall Foliage Color
+                                <input type="text" name="fall_foliage">
+                            </label>
+                            <label>Description
+                                <textarea name="description"  cols="50" rows="10"></textarea>
+                            </label>
+                            <input type="submit" class="button"  value="Add Tree">
+                        </form>
+                    </div>
+                    <div>
+                        <h2>Add Images to Tree</h2>
+                        <p>
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}                    
+                                    {% for message in messages %}
+                                        <p>{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </p>
+                        <form action="/upload/picture" method="post" class="block" enctype="multipart/form-data">
+                            <label>Select a Tree
+                            <select name="id">
+                                {% for tree in trees %}
+                                    <option value="{{ tree.id }}">{{ tree.common_name }}</option>
+                                {% endfor %}
+                            </select>
+                            </label>
+                            <label> Upload Images
+                                <input type="file" name="picture">
+                            </label>
+                            <input type="submit" class="button"  value="Add Picture">
+                        </form>
+                        {% for image in images %}
+                            <img src= "{{url_for('serve_image', filename=image)}}" >
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="admin_right">
+                    <div class="create_tree">
+                        <h2>Update Tree In Database</h2>
+                        <form action="/update/tree" method="post" class="block">
+                            <label>Which tree do you want to update?
+                            <select name="id" onchange="populateTreeData()">
+                                {% for tree in trees %}
+                                    <option value="{{ tree.id }}">{{ tree.common_name }}</option>
+                                {% endfor %}
+                            </select>
+                            </label>
+                            <input type="hidden" name="id" value="{{ tree.id }}">
+                            <label > Common Name
+                                <input type="text" name="common_name" value="{{ tree.common_name }}">
+                            </label>
+                            <label > Scientific Name
+                                <input type="text" name="scientific_name" value="{{ tree.scientific_name }}">
+                            </label>
+                            <label > Order
+                                <input type="text" name="tree_order" value="{{ tree.tree_order }}">
+                            </label>
+                            <label > Family
+                                <input type="text" name="family"  value="{{ tree.family }}">
+                            </label>
+                            <label > Genus
+                                <input type="text" name="genus" value="{{ tree.genus }}">
+                            </label>
+                            <label > Species
+                                <input type="text" name="species" value="{{ tree.species }}">
+                            </label>
+                            <label > Deciduous or Evergreen
+                                <input type="text" name="deciduous" value="{{ tree.deciduous }}">
+                            </label>
+                            <label > Mature Height
+                                <input type="text" name="mature_height" value="{{ tree.mature_height }}">
+                            </label>
+                            <label > Mature Diameter
+                                <input type="text" name="mature_diameter" value="{{ tree.mature_diameter }}">
+                            </label>
+                            <label > Growth Rate
+                                <input type="text" name="growth_rate" value="{{ tree.growth_rate }}">
+                            </label>
+                            <label > Hardiness Zone
+                                <input type="text" name="hardiness_zone" value="{{ tree.hardiness_zone }}">
+                            </label>
+                            <label > Leaf Type
+                                <input type="text" name="leaf_type" value="{{ tree.leaf_type }}">
+                            </label>
+                            <label > Spring Foliage Color
+                                <input type="text" name="spring_foliage" value="{{ tree.spring_foliage }}">
+                            </label>
+                            <label > Fall Foliage Color
+                                <input type="text" name="fall_foliage"  value="{{ tree.fall_foliage }}">
+                            </label>
+                            <label>Description
+                                <textarea name="description"  cols="50" rows="10">{{ tree.description }}</textarea>
+                            </label>
+                            <input type="submit" class="button"  value="Edit Tree">
+                        </form>
+                    </div>
+                    <div>
+                        <h2>Which Tree do you want to Delete?</h2>
+                        <form action="/tree/delete" method="post">
+                            <label>Select a Tree
+                                <select name="id">
+                                    {% for tree in trees %}
+                                        <option value="{{ tree.id }}">{{ tree.common_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </label>
+                            <input type="submit" class="button" value="Delete Tree">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+<div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Importance of Tree Identification</a>
+                <a class="nav-link" href="#">Colorado Tree Species</a>
+                <a class="nav-link" href="#">Take a Quiz</a>
+                <a class="nav-link" href="#">Account</a>
+                </div> -->
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

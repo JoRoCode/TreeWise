@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>TreeWise</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <img src="/static/images/cover.png" alt="TreeWise Logo" id="logo">
+            <div>
+                <a class="button" href="/login">Login</a>
+            </div>
+        </div>
+        <div class="opaq_back">
+            <div class="main-info">
+                <h1>Register a new account</h1>
+                <div class="flash">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}                    
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="center">
+                    <form action="/user/register" method="post" class="reg_form">
+                        <label>First Name:
+                            <input type="text" name="first_name">
+                        </label>
+                        <label>Last Name:
+                            <input type="text" name="last_name">
+                        </label>
+                        <label>Email:
+                            <input type="email" name="email">
+                        </label>
+                        <label>Company Name: (If applicable)
+                            <input type="text" name="company_name">
+                        </label>
+                        <label for="occupation">Occupation:
+                            <select name="occupation" id="occupation">
+                                <option value="Arborist">Arborist</option>
+                                <option value="Owner">Owner</option>
+                                <option value="Climber">Climber</option>
+                                <option value="Groundie">Groundie</option>
+                                <option value="Landscaper">Landscaper</option>
+                                <option value="Horticulturist">Horticulturist</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Other">Just here for the trees man!!</option>
+                            </select>
+                        </label>
+                        <label>Password:
+                            <input type="password" name="password">
+                        </label>
+                        <label>Confirm Password:
+                            <input type="password" name="confirm_password">
+                        </label>
+                        <input class="button" type="submit" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

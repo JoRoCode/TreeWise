@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>TreeWise</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <a href="/home"><img src="/static/images/cover.png" alt="TreeWise Logo" id="logo"></a>
+            <div>
+                <ul>
+                    <li><a href="/importance">Importance of Tree Identification</a></li>
+                    <li><a href="/species">Colorado Tree Species</a></li>
+                    <li><a href="#">Take a Quiz</a></li>
+                    <li><a href="/user/account">Account</a></li>
+                </ul>
+                <form action="#" id="search">
+                    <input type="search" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="submit" class="button" value="Search">
+                </form>
+            </div>
+            <a href="/user/logout" class="button">Logout</a>
+        </div>
+        <div class="opaq_back flex">
+            <div class="main-info">
+                <h1>{{ tree.common_name }}</h1>
+                <h2>{{  tree.scientific_name  }}</h2>
+                <table class="block">
+                    <tr>
+                        <th>Order:</th>
+                        <td>{{ tree.tree_order }}</td>
+                    </tr>
+                    <tr>
+                        <th>Family:</th>
+                        <td>{{ tree.family }}</td>
+                    </tr>
+                    <tr>
+                        <th>Genus:</th>
+                        <td>{{ tree.genus }}</td>
+                    </tr>
+                    <tr>
+                        <th>Species:</th>
+                        <td>{{ tree.species }}</td>
+                    </tr>
+                    <tr>
+                        <th>Deciduous or Evergreen:</th>
+                        <td>{{ tree.deciduous }}</td>
+                    </tr>
+                    <tr>
+                        <th>Mature Height:</th>
+                        <td>{{ tree.mature_height }}</td>
+                    </tr>
+                    <tr>
+                        <th>Mature Diameter:</th>
+                        <td>{{ tree.mature_diameter }}</td>
+                    </tr>
+                    <tr>
+                        <th>Growth Rate:</th>
+                        <td>{{ tree.growth_rate }}</td>
+                    </tr>
+                    <tr>
+                        <th>Hardiness Zones:</th>
+                        <td>{{ tree.hardiness_zone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Leaf Type:</th>
+                        <td>{{ tree.leaf_type }}</td>
+                    </tr>
+                    <tr>
+                        <th>Spring Foliage Color:</th>
+                        <td>{{ tree.spring_foliage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fall Foliage Color:</th>
+                        <td>{{ tree.fall_foliage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description:</th>
+                        <td>{{ tree.description }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="side_pics">
+                {% for picture in pictures %}
+                    <img src="/static/images/{{picture.path}}" class="tree_picture" alt="tree">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+<div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Importance of Tree Identification</a>
+                <a class="nav-link" href="#">Colorado Tree Species</a>
+                <a class="nav-link" href="#">Take a Quiz</a>
+                <a class="nav-link" href="#">Account</a>
+                </div> -->
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

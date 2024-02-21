@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>TreeWise</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <a href="/home"><img src="/static/images/cover.png" alt="TreeWise Logo" id="logo"></a>
+            <div>
+                <ul>
+                    <li><a href="/importance">Importance of Tree Identification</a></li>
+                    <li><a href="/species">Colorado Tree Species</a></li>
+                    <li><a href="#">Take a Quiz</a></li>
+                    <li><a href="/user/account">Account</a></li>
+                </ul>
+                <form action="#" id="search">
+                    <input type="search" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="submit" class="button" value="Search">
+                </form>
+            </div>
+            <a href="/user/logout" class="button">Logout</a>
+        </div>
+        <div class="opaq_back">
+            <div class="main-info">
+                <h1>Welcome, {{ user.first_name }}</h1>
+                <p>Congratulations on taking the next step to enhancing your professional, personal or recreational life! Make sure to introduce your self below.  If you have any questions, want to post your latest quiz results or just plain talk trees feel free to do so.  </p>
+                <div class="flex">
+                    <div>
+                        <form action="/user/comment" id="comment_form" method="post">
+                            <input type="hidden" name="user_id" value="{{ session.user_id }}">
+                            <label for="comment">
+                                <textarea name="comment" id="comment" cols="50" rows="8"></textarea>
+                            </label>
+                            <input type="submit" class="button" value="Submit">
+                        </form>
+                        <div class="comment-box">
+                            <h2>What are people saying?</h2>
+                            {% for comment in comments %}
+                                <div class="comment">
+                                    <div class="comment_head">
+                                        <h3>{{ comment.creator.first_name }} {{ comment.creator.last_name }}</h3>
+                                        <p>{{ comment.creator.occupation }} | {{ comment.creator.company_name }}</p>
+                                    </div>
+                                    <div class="comment_body">
+                                        <p>{{ comment.comment }}</p>
+                                        <h4>{{ comment.created_at }}</h4>
+                                    </div>
+                                    {% if comment.creator.id == session.user_id %}
+                                    <div>
+                                        <a href="/user/comment/delete/{{ comment.id }}">delete</a> | 
+                                        <button onclick="showForm({{comment.id}})" type="button" class="show_popup">edit</-button>
+                                    </div>
+                                    <div class="popup_container" id="popup_container{{ comment.id }}">
+                                        <div class="popup_box">
+                                            <form action="/user/comment/update" method="post">
+                                                <input type="hidden" name="id" value="{{ comment.id }}">
+                                                <label>
+                                                    <textarea name="comment" id="comment" cols="50" rows="8">{{ comment.comment }}</textarea>
+                                                </label>
+                                                <input type="submit" class="close_button button" value="Post">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="home_tree">
+                            <img src="/static/images/home_tree.png">
+                            <p>Green ash tree located in Arvada, CO on a beautiful fall morning<p>
+                        </div>
+                        <div class="home_tree">
+                            <img src="/static/images/cottonwood.png">
+                            <p>Cottonwood tree in Lakewood, CO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

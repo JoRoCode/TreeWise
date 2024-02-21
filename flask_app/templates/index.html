@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>What is this page called</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <img src="/static/images/cover.png" alt="TreeWise Logo" id="logo">
+            <div>
+                <a class="button" href="/register">Create an Account</a>
+                <a class="button" href="/login">Login</a>
+            </div>
+        </div>
+        <div class="opaq_back">
+            <div class="main-info">
+                <h1>Learn to Identify Colorado Trees</h1>
+                <p>There are an estimated 3.04 trillion trees on the planet.  That includes roughly 73,000 different species, 9,000 of which have not yet to be discovered or identified. In the united states alone ther are there are 228 billion trees and somewhere around 640 different species. </p>
+                <p>Colorado is fifth on the list of states with the most trees. Within it's borders it holds roughly 50 native (and upwards of another 30 more non-native) tree species that make up a tree population of 6,100,000,000. Each species has it's own charicteristics, requirements and problems.</p>
+                <p>I am an ISA board certified arborist with a great passion for nature and especially trees.  In my years working as an arborist I found it far too common to meet other arborists that couldn't properly identify many native trees that they worked with every day.  So I set out to try and help teach people so they can better take care of the trees they work with every day.  Also, so those of us who don't work with trees every day but share the love for them and would simply like to know more about them.</p>
+                <p>If you would like to start your journey into tree Identification sign up for an account. After that you can look through different species of trees that live in Colorado and learn the different charicteristics. And when you feel confident you can take a quiz to see how you are doing. Track your results and follow your progress as you go. And even chat with other people in the community.</p>
+                <h2>Good luck and good job for taking the next setp!!</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
+    <title>TreeWise</title>
+</head>
+<body>
+    <div class="header">
+        <div class="top-nav">
+            <img src="/static/images/cover.png" alt="TreeWise Logo" id="logo">
+            <div>
+                <ul>
+                    <li><a href="/importance">Importance of Tree Identification</a></li>
+                    <li><a href="/species">Colorado Tree Species</a></li>
+                    <li><a href="#">Take a Quiz</a></li>
+                    <li><a href="/user/account">Account</a></li>
+                </ul>
+                <form action="#" id="search">
+                    <input type="search" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="submit" class="button" value="Search">
+                </form>
+            </div>
+            <a href="/user/logout" class="button">Logout</a>
+        </div>
+        <div class="opaq_back">
+            <div class="main-info">
+                <h1>{{ session.first_name }}'s Quiz results</h1>
+                <table>
+                    <tr>
+                        <th>Quiz number:</th>
+                        <th>Date:</th>
+                        <th>Score</th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <form action="/user/update" method="post">
+                    <label>First Name:
+                        <input type="text" name="first_name" value="{{ user.first_name }}">
+                    </label>
+                    <label>Last Name:
+                        <input type="text" name="last_name" value="{{ user.last_name }}">
+                    </label>
+                    <label>Email:
+                        <input type="email" name="email" value="{{ user.email }}">
+                    </label>
+                    <label for="occupation">Occupation:
+                        <select name="occupation" id="occupation">
+                            <option value="{{ user.occupation }}">{{ user.occupation }}</option>
+                            <option value="Arborist">Arborist</option>
+                            <option value="Owner">Owner</option>
+                            <option value="Climber">Climber</option>
+                            <option value="Groundie">Groundie</option>
+                            <option value="Landscaper">Landscaper</option>
+                            <option value="Horticulturist">Horticulturist</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Other">Just here for the trees man!!</option>
+                        </select>
+                    </label>
+                    <label>Company Name:
+                        <input type="text" name="company_name" value="{{ user.company_name }}">
+                    </label>
+                    <label>Member Since: {{ user.created_at }}</label>
+                    <input type="submit" class="button" value="Update Account Info">
+                </form>
+            </div>
+            <div>
+                <form action="/user/account/delete" method="post">
+                    <input type="hidden" name="id" value="{{ user.id }}">
+                    <input type="submit" class="button" value="Delete Account">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+<div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Importance of Tree Identification</a>
+                <a class="nav-link" href="#">Colorado Tree Species</a>
+                <a class="nav-link" href="#">Take a Quiz</a>
+                <a class="nav-link" href="#">Account</a>
+                </div> -->
+<!-- Format for adding images -->
+<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->
