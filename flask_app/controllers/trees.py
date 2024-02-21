@@ -50,6 +50,14 @@ def delete_tree():
     tree.Tree.delete_tree(request.form)
     return redirect('/admin')
 
+# Search controller
+
+@app.post('/species/search')
+def search_by_common_name():
+    if 'user_id' not in session: return redirect('/')
+    print(request.form)
+    # tree.Tree.get_tree_by_common_name(request.form)
+    return redirect(f'/species/{request.form['common_name']}')
 # Notes:
 # 1 - Use meaningful names
 # 2 - Do not overwrite function names
