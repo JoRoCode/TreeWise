@@ -7,6 +7,7 @@ class Picture:
     def __init__(self, data):
         self.id = data['id']
         self.path = data['path']
+        self.attribute = data['attribute']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.tree = None
@@ -21,9 +22,11 @@ class Picture:
             INSERT INTO
                 pictures
                     (path,
+                    attribute,
                     tree_id)
             VALUES
                 (%(path)s,
+                (%(attribute)s,
                 %(tree_id)s);
             """
         return connectToMySQL(cls.db).query_db(query,picture_data)

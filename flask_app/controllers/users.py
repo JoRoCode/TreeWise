@@ -44,6 +44,8 @@ def show_user_account():
 # Update Users Controller
 @app.post('/user/update')
 def update_user_account():
+    if 'user_id' not in session: return redirect('/')
+    print(request.form)
     user.User.update_user_info(request.form)
     return redirect('/user/account')
 
@@ -52,7 +54,6 @@ def update_user_account():
 @app.post('/user/account/delete')
 def delete_user_account():
     if 'user_id' not in session: return redirect('/')
-    print(session, "kjbsvkjfojvsnodvosdhvosvosdvosh")
     user.User.delete_user_account(session['user_id'])
     session.clear()
     return redirect('/')
@@ -63,8 +64,8 @@ def delete_user_account():
 @app.post('/user/login')
 def log_user_in():
     if user.User.log_user_in(request.form):
-        return redirect('/home') # redirect to the show page
-    return redirect('/user/login')
+        return redirect('/home')
+    return redirect('/login')
 
 
 # log user out
@@ -73,32 +74,3 @@ def log_user_in():
 def log_user_out():
     session.clear()
     return redirect('/')
-
-
-# Notes:
-# 1 - Use meaningful names
-# 2 - Do not overwrite function names
-# 3 - No matchy, no worky
-# 4 - Use consistent naming conventions 
-# 5 - Keep it clean
-# 6 - Test every little line before progressing
-# 7 - READ ERROR MESSAGES!!!!!!
-# 8 - Error messages are found in the browser and terminal
-
-
-
-
-# How to use path variables:
-# @app.route('/<int:id>')                                   The variable must be in the path within angle brackets
-# def index(id):                                            It must also be passed into the function as an argument/parameter
-#     user_info = user.User.get_user_by_id(id)              The it will be able to be used within the function for that route
-#     return render_template('index.html', user_info)
-
-# Converter -	Description
-# string -	Accepts any text without a slash (the default).
-# int -	Accepts integers.
-# float -	Like int but for floating point values.
-# path 	-Like string but accepts slashes.
-
-# Render template is a function that takes in a template name in the form of a string, then any number of named arguments containing data to pass to that template where it will be integrated via the use of jinja
-# Redirect redirects from one route to another, this should always be done following a form submission. Don't render on a form submission.

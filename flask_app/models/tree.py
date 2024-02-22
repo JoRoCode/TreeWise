@@ -1,7 +1,7 @@
 
 from flask_app import app
 from flask_app.config.mysqlconnection import connectToMySQL
-
+from flask import flash
 
 class Tree:
     db = "treewise" #which database are you using for this project
@@ -30,6 +30,7 @@ class Tree:
     # Create Tree Models
     @classmethod
     def create_new_tree(cls,tree_data):
+        if not cls.validate_tree(tree_data): return False
         print(tree_data)
         query = """
             INSERT INTO
@@ -105,10 +106,8 @@ class Tree:
             WHERE common_name = %(common_name)s
             OR scientific_name = %(scientific_name)s;"""
         results = connectToMySQL(cls.db).query_db(query,tree_name)
-        tree_name = cls(results[0])
-        print(tree_name.get('common_name'))
         if results:
-            return False
+            return results[0]['common_name']
         return False
     
     
@@ -128,6 +127,7 @@ class Tree:
         this_tree.pictures.append({
             'pictures.id': 'pictures.id',
             'path' : 'path',
+            'attribute' : 'attribute'
             'created_at' : 'pictures.created_at',
             'updated_at' : 'pictures.updated_at',
             'tree_id' : this_tree.id})
@@ -163,6 +163,7 @@ class Tree:
             this_tree.pictures.append({
             'pictures.id': 'pictures.id',
             'path' : 'path',
+            'attribute' : 'attribute'
             'created_at' : 'pictures.created_at',
             'updated_at' : 'pictures.updated_at',
             'tree_id' : this_tree.id})
@@ -173,6 +174,7 @@ class Tree:
     # Update trees Models
     @classmethod
     def update_this_tree(cls,data):
+        if not cls.validate_tree(data): return False
         query = """
             UPDATE
                 trees
@@ -236,4 +238,52 @@ class Tree:
                 "updated_at" : data['updated_at']})
         return cls(data)
 
-
+    @classmethod
+    def validate_tree(cls,data):
+        is_valid = True
+        if len(data['common_name']) < 1:
+            flash("Common name is required")
+            is_valid = False
+        if len(data['scientific_name']) < 1:
+            flash("Scientific name is required")
+            is_valid = False
+        if len(data['tree_order']) < 1:
+            flash("Order is required")
+            is_valid = False
+        if len(data['family']) < 1:
+            flash("Family is required")
+            is_valid = False
+        if len(data['genus']) < 1:
+            flash("Genus is required")
+            is_valid = False
+        if len(data['species']) < 1:
+            flash("Species is required")
+            is_valid = False
+        if len(data['deciduous']) < 1:
+            flash("Deciduous or Evergreen is required")
+            is_valid = False
+        if len(data['mature_height']) < 1:
+            flash("Mature Height is required")
+            is_valid = False
+        if len(data['mature_diameter']) < 1:
+            flash("Mature Diameter is required")
+            is_valid = False
+        if len(data['growth_rate']) < 1:
+            flash("Growth Rate is required")
+            is_valid = False
+        if len(data['hardiness_zone']) < 1:
+            flash("Hardiness Zone is required")
+            is_valid = False
+        if len(data['leaf_type']) < 1:
+            flash("Leaf Type is required")
+            is_valid = False
+        if len(data['spring_foliage']) < 1:
+            flash("Spring Foliage is required")
+            is_valid = False
+        if len(data['fall_foliage']) < 1:
+            flash("Fall Foliage is required")
+            is_valid = False
+        if len(data['description']) < 1:
+            flash("Description is required")
+            is_valid = False
+        return is_valid

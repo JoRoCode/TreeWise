@@ -1,7 +1,11 @@
+// Function for the update comment popup
+
 const showForm = id => {
     const form = document.getElementById(`popup_container${id}`)
     form.classList.add("active")
 }
+
+// Function for the hardieness zone API
 
 let zipCodeTB = document.getElementById('zipCodeTB')
 let submitButton = document.getElementById('submitButton')

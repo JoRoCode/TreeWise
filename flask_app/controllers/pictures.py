@@ -1,6 +1,6 @@
 import os
 from flask_app import app
-from flask import  redirect, request, Flask, flash, url_for, send_from_directory
+from flask import  redirect, request, Flask, flash, session, send_from_directory
 from werkzeug.utils import secure_filename
 from flask_app.models import picture
 
@@ -11,6 +11,7 @@ app.config['ALLOWED_EXTENSIONS'] = {'.png', '.jpg', '.jpeg', '.gif'}
 
 @app.post('/upload/picture')
 def upload_file():
+    if session['user_id'] != 1: return redirect('/home')
     file = request.files['picture']
     extension = os.path.splitext(file.filename)[1]
     if 'picture' not in request.files:

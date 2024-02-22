@@ -1,8 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models import user, comment # import entire file, rather than class, to avoid circular imports
-# As you add model files add them the the import above
-# This file is the second stop in Flask's thought process, here it looks for a route that matches the request
+from flask_app.models import user, comment
 
 # Create Comment Controller
 
@@ -14,8 +12,6 @@ def create_new_comment():
 
 # Read Comment Controller
 
-
-
 @app.get('/home')
 def display_home_page():
     print(session, "This is session") 
@@ -24,15 +20,15 @@ def display_home_page():
     comments = comment.Comment.get_all_comments_with_creator()
     return render_template('home.html', user = user_data, comments = comments )
 
-
-
 # Delete Comments Controller
+
 @app.get('/user/comment/delete/<int:comment_id>')
 def delete_comment(comment_id):
     if 'user_id' not in session: return redirect('/')
     comment.Comment.delete_user_comment(comment_id)
     return redirect('/home')
 
+# Update Comments Controller
 
 @app.post('/user/comment/update')
 def update_comment():

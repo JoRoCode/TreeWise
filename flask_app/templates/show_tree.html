@@ -90,6 +90,7 @@
             <div class="side_pics">
                 {% for picture in pictures %}
                     <img src="/static/images/{{picture.path}}" class="tree_picture" alt="tree">
+                    <p>{{ tree.attribute }}</p>
                 {% endfor %}
             </div>
         </div>

@@ -93,6 +93,7 @@ class User:
     @classmethod
     def update_user_info(cls,data):
         if not cls.validate_user_on_update(data): return False
+        print(data)
         query = """
             UPDATE
                 users
@@ -101,7 +102,9 @@ class User:
                 last_name = %(last_name)s,
                 email = %(email)s,
                 occupation = %(occupation)s,
-                company_name = %(company_name)s;"""
+                company_name = %(company_name)s
+            WHERE
+                id = %(id)s;"""
         connectToMySQL(cls.db).query_db(query,data)
         return True
 

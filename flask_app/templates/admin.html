@@ -22,7 +22,7 @@
                     <li><a href="/user/account">Account</a></li>
                 </ul>
                 <form action="/species/search" id="search" method="post">
-                    <input type="search" name="common_name" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="search" name="name" id="search-field" placeholder="Search Colorado Trees...">
                     <input type="submit" class="button" value="Search">
                 </form>
             </div>
@@ -33,6 +33,15 @@
                 <div class="admin_left">
                     <div class="create_tree">
                         <h2>Add Tree To Database</h2>
+                        <p>
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}                    
+                                    {% for message in messages %}
+                                        <p>{{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </p>
                         <form action="/create/tree" method="post" class="block">
                             <label > Common Name
                                 <input type="text" name="common_name">
@@ -84,25 +93,19 @@
                     </div>
                     <div>
                         <h2>Add Images to Tree</h2>
-                        <p>
-                            {% with messages = get_flashed_messages() %}
-                                {% if messages %}                    
-                                    {% for message in messages %}
-                                        <p>{{ message }}</p>
-                                    {% endfor %}
-                                {% endif %}
-                            {% endwith %}
-                        </p>
                         <form action="/upload/picture" method="post" class="block" enctype="multipart/form-data">
                             <label>Select a Tree
-                            <select name="id">
-                                {% for tree in trees %}
-                                    <option value="{{ tree.id }}">{{ tree.common_name }}</option>
-                                {% endfor %}
-                            </select>
+                                <select name="id">
+                                    {% for tree in trees %}
+                                        <option value="{{ tree.id }}">{{ tree.common_name }}</option>
+                                    {% endfor %}
+                                </select>
                             </label>
                             <label> Upload Images
                                 <input type="file" name="picture">
+                            </label>
+                            <label attribute>
+                                <input type="text" name="attribute">
                             </label>
                             <input type="submit" class="button"  value="Add Picture">
                         </form>
