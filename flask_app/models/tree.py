@@ -93,6 +93,23 @@ class Tree:
         if results:
             return cls(results[0])
         return False
+
+
+    @classmethod
+    def get_tree_by_multiple_varieables(cls,data):
+        tree_name = {'common_name': data,
+                    'scientific_name' : data}
+        query = """
+            SELECT common_name
+            FROM trees
+            WHERE common_name = %(common_name)s
+            OR scientific_name = %(scientific_name)s;"""
+        results = connectToMySQL(cls.db).query_db(query,tree_name)
+        tree_name = cls(results[0])
+        print(tree_name.get('common_name'))
+        if results:
+            return False
+        return False
     
     
     @classmethod
