@@ -3,8 +3,7 @@ from flask import render_template, redirect, request, session, Flask
 from flask_app.models import tree, picture
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/static/images'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
 # Create Tree Controller
 
 @app.post('/create/tree')

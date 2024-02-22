@@ -15,8 +15,9 @@ class Picture:
         
     # Create Picture method
     @classmethod
-    def add_picture_to_database(cls, path, tree_id):
+    def add_picture_to_database(cls, path, attribute,tree_id):
         picture_data = {'path': path,
+                        'attribute' : attribute,
                         'tree_id': tree_id}
         query = """
             INSERT INTO
@@ -26,10 +27,13 @@ class Picture:
                     tree_id)
             VALUES
                 (%(path)s,
-                (%(attribute)s,
+                %(attribute)s,
                 %(tree_id)s);
             """
-        return connectToMySQL(cls.db).query_db(query,picture_data)
+        print(query)
+        results = connectToMySQL(cls.db).query_db(query,picture_data)
+        print(results)
+        return results
     
     # Read Picture Method
 

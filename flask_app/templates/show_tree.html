@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="/importance">Importance of Tree Identification</a></li>
                     <li><a href="/species">Colorado Tree Species</a></li>
-                    <li><a href="#">Take a Quiz</a></li>
+                    <li><a href="/quiz">Take a Quiz</a></li>
                     <li><a href="/user/account">Account</a></li>
                 </ul>
                 <form action="/species/search" id="search" method="post">
@@ -89,8 +89,10 @@
             </div>
             <div class="side_pics">
                 {% for picture in pictures %}
-                    <img src="/static/images/{{picture.path}}" class="tree_picture" alt="tree">
-                    <p>{{ tree.attribute }}</p>
+                    <div>
+                        <img src="/static/images/{{picture.path}}" class="tree_picture" alt="tree">
+                        <p>{{ picture.attribute }}</p>
+                    </div>
                 {% endfor %}
             </div>
         </div>

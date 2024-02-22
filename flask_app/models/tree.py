@@ -127,7 +127,7 @@ class Tree:
         this_tree.pictures.append({
             'pictures.id': 'pictures.id',
             'path' : 'path',
-            'attribute' : 'attribute'
+            'attribute' : 'attribute',
             'created_at' : 'pictures.created_at',
             'updated_at' : 'pictures.updated_at',
             'tree_id' : this_tree.id})
@@ -163,7 +163,7 @@ class Tree:
             this_tree.pictures.append({
             'pictures.id': 'pictures.id',
             'path' : 'path',
-            'attribute' : 'attribute'
+            'attribute' : 'attribute',
             'created_at' : 'pictures.created_at',
             'updated_at' : 'pictures.updated_at',
             'tree_id' : this_tree.id})

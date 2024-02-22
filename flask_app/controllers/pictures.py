@@ -31,8 +31,9 @@ def upload_file():
         flash('Image successfully uploaded.')
         print(file)
         print(secure_filename(file.filename))
+        print(request.form)
     picture.Picture.add_picture_to_database(
-        secure_filename(file.filename), 
+        secure_filename(file.filename), request.form['attribute'],
         request.form['id'])
     return redirect('/admin')
 
