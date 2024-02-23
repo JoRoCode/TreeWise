@@ -122,7 +122,6 @@ class Tree:
             WHERE common_name = %(common_name)s;
             """
         result = connectToMySQL(cls.db).query_db(query,common_name)
-        print(result, "RESULT!!!!!!!!!!!!")
         this_tree = cls(result[0])
         this_tree.pictures.append({
             'pictures.id': 'pictures.id',

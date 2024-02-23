@@ -52,6 +52,10 @@ margin: 10px;
 text-decoration: none;
 }
 
+.button:hover {
+background: rgb(11, 69, 11);
+}
+
 #search-field{
 width: 350px;
 height: 30px;
@@ -306,3 +310,139 @@ align-items: center;
 height: 350px;
 margin: 20px;
 }
+
+.main-info_quiz{
+max-width: 500px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+.quiz_home {
+background-color: #384733;
+padding: 100px;
+border-radius: 15px;
+width: 500px;
+display: flex;
+align-items: center;
+flex-direction: column;
+margin: 50px;
+text-align: center;
+}
+
+.quiz_home .start_button {
+width: 175px;
+height: 50px;
+background-color: darkgreen;
+border: 2px solid whitesmoke;
+outline: none;
+border-radius: 6px;
+box-shadow: 0 0 7px whitesmoke;
+font-size: 15px;
+color: whitesmoke;
+letter-spacing: 1px;
+font-weight: bold;
+cursor: pointer;
+transition: .5s;
+}
+
+.quiz_home .start_button:hover {
+background: #0f1b0b;
+box-shadow: none;
+}
+
+.quiz_home h1{
+color: whitesmoke;
+font-size: 50px;
+font-weight: bold;
+text-shadow: 0 0 50 rgb(26, 102, 26);
+margin: 15px;
+}
+
+.quiz_home p {
+color: whitesmoke;
+font-size: 20px;
+text-align: center;
+text-shadow: 0 0 50 rgb(26, 102, 26);
+margin: 15px;
+font-weight: bold;
+}
+
+
+
+.popup_quiz {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 500px;
+background: #384733;
+border-radius: 6px;
+padding: 10px 25px;
+opacity:0;
+pointer-events: none;
+}
+
+.popup_quiz.active {
+opacity: 1;
+pointer-events: auto;
+transition: .3s ease;
+}
+
+.popup_quiz h2 {
+font-size: 50px;
+color: whitesmoke;
+}
+.popup_quiz .info {
+display: inline-block;
+font-size: 15px;
+color: whitesmoke;
+font-weight: bold;
+margin: 5px 0;
+}
+
+.popup_quiz .button_group {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-top: 2px solid rgb(56, 56, 56);
+margin-top: 10px;
+padding: 15px 0 7px;
+}
+
+.popup_quiz .button_group .info_button {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 130px;
+height: 45px;
+background: darkgreen;
+border: 3px solid darkgreen;
+outline: none;
+border-radius: 6px;
+text-decoration: none;
+font-size: 15px;
+color: whitesmoke;
+font-weight: bold;
+box-shadow: 0 0 10px darkgray;
+cursor: pointer;
+transition: .5s;
+}
+
+.popup_quiz .button_group .info_button:nth-child(1) {
+background: transparent;
+color: whitesmoke;
+}
+
+.popup_quiz .button_group .info_button:nth-child(1):hover {
+background: darkgreen;
+color: whitesmoke;
+}
+
+.popup_quiz .button_group .info_button:nth-child(2):hover {
+background: #384733;
+border-color: #384733;
+}
+

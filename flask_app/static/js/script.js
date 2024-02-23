@@ -39,3 +39,19 @@ submitButton.addEventListener('click', async () => {
     }
 })
 
+
+
+// Function for the Popup Quiz
+
+const startButton = document.querySelector('.start_button');
+const popupQuiz = document.querySelector('.popup_quiz');
+
+// startButton.onclick = () => {
+//     popupQuiz.classList.add('active');
+// }
+
+
+const startQuiz = () => {
+    const popupQuiz = document.getElementById('.popup_quiz')
+    popupQuiz.classList.add("active")
+}

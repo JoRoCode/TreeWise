@@ -56,8 +56,6 @@ def delete_tree():
 @app.post('/species/search')
 def search_by_common_name():
     if 'user_id' not in session: return redirect('/')
-    print(request.form)
     tree_name = request.form['name']
     tree_data = tree.Tree.get_tree_by_multiple_varieables(tree_name)
-    print(tree_data, "Tree DATA")
     return redirect(f'/species/{tree_data}')
