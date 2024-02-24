@@ -39,19 +39,22 @@ submitButton.addEventListener('click', async () => {
     }
 })
 
+// Onclick to start the Popup Quiz
 
+function startQuiz(){
+    document.querySelector('.popup_quiz').classList.add("active");
+    document.querySelector('.header').classList.add("active");
+}
+// Function to remove the popup quiz
+function stopQuiz(){
+    document.querySelector('.popup_quiz').classList.remove("active");
+    document.querySelector('.header').classList.remove("active");
 
-// Function for the Popup Quiz
+}
 
-const startButton = document.querySelector('.start_button');
-const popupQuiz = document.querySelector('.popup_quiz');
+function continueQuiz(){
+    document.querySelector('.quiz_section').classList.add("active");
+    document.querySelector('.popup_quiz').classList.remove("active");
+    document.querySelector('.header').classList.remove("active");
 
-// startButton.onclick = () => {
-//     popupQuiz.classList.add('active');
-// }
-
-
-const startQuiz = () => {
-    const popupQuiz = document.getElementById('.popup_quiz')
-    popupQuiz.classList.add("active")
 }

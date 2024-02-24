@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
     <title>TreeWise</title>
 </head>
 <body>
@@ -30,36 +28,56 @@
         </div>
         <div class="opaq_back">
             <div class="main-info_quiz">
-                <div class="quiz_home">
-                    <h1>Take a Quiz</h1>
-                    <p>Test your knowledge and track your quiz results.</p>
-                    <button onclick="startQuiz()" class="start_button">Start Quiz</button>
+                <div class="quiz_section">
+                    <div class="quiz_box">
+                        <h1>Tree Quiz</h1>
+                        <div class="quiz_header">
+                            <span>Quiz Info</span>
+                            <span class="header_score">Score: 0 / 10</span>
+                        </div>
+                        <h2 class="question_text">Identify this tree</h2>
+                        <div class="option_list">
+                            <div class="option">
+                                <span>Answer</span>
+                            </div>
+                            <div class="option">
+                                <span>Answer</span>
+                            </div>
+                            <div class="option">
+                                <span>Answer</span>
+                            </div>
+                            <div class="option">
+                                <span>Answer</span>
+                            </div>
+                        </div>
+                        <div class="quiz_footer">
+                            <span class="question_total">question 1 of 10</span>
+                            <button class="next_button">Next Question</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="quiz_home">
+                        <h1>Take a Quiz</h1>
+                        <p>Test your knowledge and track your quiz results.</p>
+                        <button onclick="startQuiz()" class="start_button" id="start_button">Start Quiz</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="popup_quiz">
-            <h2>Tree Quiz</h2>
-            <span class="info">1. Lorem ipsum, dolor sit amet consectetur</span>
-            <span class="info">2. Lorem ipsum, dolor sit amet consectetur</span>
-            <span class="info">3. Lorem ipsum, dolor sit amet consectetur</span>
-            <span class="info">4. Lorem ipsum, dolor sit amet consectetur</span>
-            <span class="info">5. Lorem ipsum, dolor sit amet consectetur</span>
-            <div class="button_group">
-                <button class="info_button">Exit Quiz</button>
-                <a href="#" class="info_button">Next Question</a>
-            </div>
+    </div>
+    <div class="popup_quiz">
+        <h2>Tree Quiz</h2>
+        <span class="info">1. Lorem ipsum, dolor sit amet consectetur</span>
+        <span class="info">2. Lorem ipsum, dolor sit amet consectetur</span>
+        <span class="info">3. Lorem ipsum, dolor sit amet consectetur</span>
+        <span class="info">4. Lorem ipsum, dolor sit amet consectetur</span>
+        <span class="info">5. Lorem ipsum, dolor sit amet consectetur</span>
+        <div class="button_group">
+            <button onclick="stopQuiz()" class="info_button">Exit Quiz</button>
+            <button onclick="continueQuiz()" class="info_button continueBtn">Continue</button>
+
         </div>
     </div>
 </body>
 </html>
-
-
-<!-- 
-<div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Importance of Tree Identification</a>
-                <a class="nav-link" href="#">Colorado Tree Species</a>
-                <a class="nav-link" href="#">Take a Quiz</a>
-                <a class="nav-link" href="#">Account</a>
-                </div> -->
-<!-- Format for adding images -->
-<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->
