@@ -56,5 +56,19 @@ function continueQuiz(){
     document.querySelector('.quiz_section').classList.add("active");
     document.querySelector('.popup_quiz').classList.remove("active");
     document.querySelector('.header').classList.remove("active");
+    document.querySelector('.quiz_box').classList.add("active");
+    showQuestions(0);
+}
 
+let questionCount = 0;
+
+function nextQuestion(){
+document.querySelector('.next_button');
+questionCount++;
+showQuestions(questionCount)
+}
+
+function showQuestions(index) {
+    const questionText = document.querySelector('.question_text');
+    questionText.textcontent =`${question[index].numb}. ${questions[index].question}`;
 }
