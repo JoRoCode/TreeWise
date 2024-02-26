@@ -60,15 +60,16 @@ function continueQuiz(){
     showQuestions(0);
 }
 
-let questionCount = 0;
 
-function nextQuestion(){
-document.querySelector('.next_button');
-questionCount++;
-showQuestions(questionCount)
+function nextQuestion() {
+    let questionCount = 0;
+    questionCount++;
+    showQuestions(questionCount);
 }
 
+
 function showQuestions(index) {
+    console.log("hello there")
     const questionText = document.querySelector('.question_text');
-    questionText.textcontent =`${question[index].numb}. ${questions[index].question}`;
+    questionText.textContent = `${questions[index].number}. ${questions[index].question}`;
 }
