@@ -61,15 +61,30 @@ function continueQuiz(){
 }
 
 
-function nextQuestion() {
-    let questionCount = 0;
+// function nextQuestion(){
+//     let questionCount = 0;
+//     questionCount++;
+//     showQuestions(questionCount);
+// }
+
+let questionCount = 0;
+
+const nextBtn = document.getElementById('next_button');
+
+nextBtn.onclick = () => {
     questionCount++;
     showQuestions(questionCount);
 }
-
 
 function showQuestions(index) {
     console.log("hello there")
     const questionText = document.querySelector('.question_text');
     questionText.textContent = `${questions[index].number}. ${questions[index].question}`;
+
+    let optionTag = 
+        `<div class="option"><span>${questions[index].options[0]}</span></div>
+        <div class="option"><span>${questions[index].options[1]}</span></div>
+        <div class="option"><span>${questions[index].options[2]}</span></div>
+        <div class="option"><span>${questions[index].options[3]}</span></div>`;
+    document.getElementById('option_list').innerHTML = optionTag;
 }
