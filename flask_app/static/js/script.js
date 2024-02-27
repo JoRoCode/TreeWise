@@ -1,3 +1,8 @@
+const nextBtn = document.querySelector('.next_button');
+let questionCount = 0;
+let questionNumb = 1;
+let userScore = 0;
+
 // Function for the update comment popup
 
 const showForm = id => {
@@ -58,28 +63,29 @@ function continueQuiz(){
     document.querySelector('.header').classList.remove("active");
     document.querySelector('.quiz_box').classList.add("active");
     showQuestions(0);
+    questionCounter(1);
+    headerScore();
 }
 
 
-// function nextQuestion(){
-//     let questionCount = 0;
-//     questionCount++;
-//     showQuestions(questionCount);
-// }
+function nextQuestion(){
+    if (questionCount < questions.length -1){
+        questionCount++;
+        showQuestions(questionCount);
 
-let questionCount = 0;
+        questionNumb++
+        questionCounter(questionNumb);
 
-const nextBtn = document.getElementById('next_button');
-
-nextBtn.onclick = () => {
-    questionCount++;
-    showQuestions(questionCount);
+        nextBtn.classList.remove('active');
+    }
+    else { console.log('question completed');
+    }
 }
+
 
 function showQuestions(index) {
-    console.log("hello there")
     const questionText = document.querySelector('.question_text');
-    questionText.textContent = `${questions[index].number}. ${questions[index].question}`;
+    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 
     let optionTag = 
         `<div class="option"><span>${questions[index].options[0]}</span></div>
@@ -87,4 +93,44 @@ function showQuestions(index) {
         <div class="option"><span>${questions[index].options[2]}</span></div>
         <div class="option"><span>${questions[index].options[3]}</span></div>`;
     document.getElementById('option_list').innerHTML = optionTag;
+
+    const option = document.querySelectorAll('.option');
+    for (let i = 0; i < option.length; i++) {
+        option[i].setAttribute('onclick', 'optionSelected(this)');
+    }
+}
+
+function optionSelected(answer) {
+    let userAnswer = answer.textContent;
+    let correctAnswer = questions[questionCount].answer;
+    let allOptions = option_list.children.length;
+
+    if(userAnswer == correctAnswer) {
+        answer.classList.add('correct');
+        userScore += 1;
+        headerScore();
+    }
+    else {
+        answer.classList.add('incorrect');
+        for (let i = 0; i < allOptions; i++) {
+            if (option_list.children[i].textContent == correctAnswer) {
+                option_list.children[i].setAttribute('class', 'option correct');
+            }
+        }
+    }
+    
+    for (let i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add('disabled');
+    }
+    nextBtn.classList.add('active');
+}
+
+function questionCounter(index) {
+    const questionTotal = document.querySelector('.question_total');
+    questionTotal.textContent = `${index} of ${questions.length} Questions`;
+}
+
+function headerScore() {
+    const headerScoreText = document.querySelector('.header_score');
+    headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`
 }

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/questions.js') }}" defer></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <title>TreeWise</title>
 </head>
 <body>
@@ -36,12 +36,25 @@
                             <span>Quiz Info</span>
                             <span class="header_score">Score: 0 / 10</span>
                         </div>
-                        <h2 class="question_text">Identify this tree</h2>
+                        <h2 class="question_text"></h2>
                         <div id="option_list" class="option_list">
                         </div>
                         <div class="quiz_footer">
                             <span class="question_total">question 1 of 10</span>
-                            <button id="next_button" class="next_button"> Next Question</button>
+                            <button onclick="nextQuestion()" class="next_button"> Next Question</button>
+                        </div>
+                    </div>
+                    <div .results_box>
+                        <h2>Quiz Results!</h2>
+                        <div class="percentage_container">
+                            <div class="circular_progress">
+                                <span class="progress_value">0%</span>
+                            </div>
+                            <span class="score_text">Your Score: 0 out of 10</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="tryAgian_btn">Try Again</button>
+                            <button class="goHome_btn">Home</button>
                         </div>
                     </div>
                 </div>
@@ -49,7 +62,7 @@
                     <div class="quiz_home">
                         <h1>Take a Quiz</h1>
                         <p>Test your knowledge and track your quiz results.</p>
-                        <button onclick="startQuiz()" class="start_button" id="start_button">Start Quiz</button>
+                        <button onclick="startQuiz()" class="start_button" >Start Quiz</button>
                     </div>
                 </div>
             </div>
@@ -65,7 +78,6 @@
         <div class="button_group">
             <button onclick="stopQuiz()" class="info_button">Exit Quiz</button>
             <button onclick="continueQuiz()" class="info_button continueBtn">Continue</button>
-
         </div>
     </div>
 </body>
