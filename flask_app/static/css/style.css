@@ -302,9 +302,37 @@ input, select {
     transform: scale(1);
 }
 
+.species_list {
+    background: #0f1b0b;
+    border-radius: 6px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    height: 1000px;
+    overflow: auto;
+}
+
+.species_list a {
+    margin: 8px;
+    text-decoration: none;
+    color: rgb(231, 230, 230);
+}
+
+.species_list h3 {
+    color: rgb(19, 156, 19);
+    font-size: 25px;
+    border-bottom: 2px solid darkgreen;
+    margin: 6px;
+    padding: 5px;
+}
+
 .tree_picture {
     width: 350px;
-    height: 200px;
     padding: 10px;
     margin: 10px;
     opacity: 1;
@@ -729,4 +757,15 @@ position: relative;
 .end_buttons button:nth-child(2):hover {
     background-color: darkgreen;
     color: whitesmoke;
+}
+
+.quiz_pics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz_pics .quiz_picture {
+    width: 115px;
+    margin: 3px;
 }

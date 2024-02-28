@@ -21,7 +21,7 @@
                     <li><a href="/user/account">Account</a></li>
                 </ul>
                 <form action="/species/search" id="search" method="post">
-                    <input type="search" name="name" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="search" name="name" id="search-field" placeholder="Search Colorado Trees..." autocomplete="off">
                     <input type="submit" class="button" value="Search">
                 </form>
             </div>
@@ -36,7 +36,10 @@
                             <span>Quiz Info</span>
                             <span class="header_score">Score: 0 / 10</span>
                         </div>
+                        <h2>Identify This Tree</h2>
                         <h2 class="question_text"></h2>
+                        <div class="quiz_pics">
+                        </div>
                         <div id="option_list" class="option_list">
                         </div>
                         <div class="quiz_footer">

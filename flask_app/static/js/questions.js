@@ -1,7 +1,11 @@
 let questions = 
 [
     {numb: 1,
-    question: "Identify this tree",
+    question: [
+        'green_ash_bark',
+        '319px-Fraxinus_pennsylvanica.jpg',
+        '640px-Fraxinus_pensylvanica_a1.jpg',
+        'Green_ash_fall.jpg'],
     answer: "B. Green Ash",
     options: [
         "A. Silver Maple",
@@ -11,7 +15,11 @@ let questions =
         ]
     },
     {numb: 2,
-    question: "Identify this tree",
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
     answer: "A. Silver Maple",
     options: [
         "A. Silver Maple",
@@ -21,10 +29,14 @@ let questions =
         ]
     },
     {
-        numb: 3,
-        question: "Identify this tree",
-        answer: "D. Plains Cottonwood",
-        options: [
+    numb: 3,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "D. Plains Cottonwood",
+    options: [
             "A. Silver Maple",
             "B. Green Ash",
             "C. Ponderosa Pine",
@@ -32,10 +44,14 @@ let questions =
         ]
     },
     {
-        numb: 4,
-        question: "Identify this tree",
-        answer: "C. Ponderosa Pine",
-        options: [
+    numb: 4,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "C. Ponderosa Pine",
+    options: [
             "A. Silver Maple",
             "B. Green Ash",
             "C. Ponderosa Pine",
@@ -43,10 +59,14 @@ let questions =
         ]
     },
     {
-        numb: 5,
-        question: "Identify this tree",
-        answer: "B. Green Ash",
-        options: [
+    numb: 5,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "B. Green Ash",
+    options: [
         "A. Silver Maple",
         "B. Green Ash",
         "C. Ponderosa Pine",
@@ -54,15 +74,14 @@ let questions =
         ]
     },
     {
-        numb: 6,
-        question: [
-        "img",
-        "img",
-        "img",
-        "img"
-        ],
-        answer: "A. Silver Maple",
-        options: [
+    numb: 6,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "A. Silver Maple",
+    options: [
         "A. Silver Maple",
         "B. Green Ash",
         "C. Ponderosa Pine",
@@ -70,15 +89,14 @@ let questions =
         ]
     },
     {
-        numb: 7,
-        question: [
-        "img",
-        "img",
-        "img",
-        "img"
-        ],
-        answer: "D. Plains Cottonwood",
-        options: [
+    numb: 7,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "D. Plains Cottonwood",
+    options: [
         "A. Silver Maple",
         "B. Green Ash",
         "C. Ponderosa Pine",
@@ -86,15 +104,14 @@ let questions =
         ]
     },
     {
-        numb: 8,
-        question: [
-        "img",
-        "img",
-        "img",
-        "img"
-        ],
-        answer: "C. Ponderosa Pine",
-        options: [
+    numb: 8,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "C. Ponderosa Pine",
+    options: [
         "A. Silver Maple",
         "B. Green Ash",
         "C. Ponderosa Pine",
@@ -102,15 +119,14 @@ let questions =
         ]
     },
     {
-        numb: 9,
-        question: [
-        "img",
-        "img",
-        "img",
-        "img"
-        ],
-        answer: "B. Green Ash",
-        options: [
+    numb: 9,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "B. Green Ash",
+    options: [
         "A. Silver Maple",
         "B. Green Ash",
         "C. Ponderosa Pine",
@@ -118,15 +134,14 @@ let questions =
         ]
     },
     {
-        numb: 10,
-        question: [
-        "img",
-        "img",
-        "img",
-        "img"
-        ],
-        answer: "A. Silver Maple",
-        options: [
+    numb: 10,
+    question: [
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png',
+        'green_ash_leaves.png'],
+    answer: "A. Silver Maple",
+    options: [
         "A. Silver Maple",
         "B. Green Ash",
         "C. Ponderosa Pine",

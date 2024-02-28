@@ -22,7 +22,7 @@
                     <li><a href="/user/account">Account</a></li>
                 </ul>
                 <form action="/species/search" id="search" method="post">
-                    <input type="search" name="name" id="search-field" placeholder="Search Colorado Trees...">
+                    <input type="search" name="name" id="search-field" placeholder="Search Colorado Trees..." autocomplete="off">
                     <input type="submit" class="button" value="Search">
                 </form>
             </div>
@@ -31,9 +31,10 @@
         <div class="opaq_back">
             <div class="main-info">
                 <h1>Colorado Tree Species</h1>
-                <div  class="block">
+                <div  class="species_list block">
                     {% for tree in trees %}
-                    <a href="/species/{{ tree.common_name }}">{{ tree.common_name }}</a>
+                        <h3>{{ tree.genus }}</h3>
+                        <a href="/species/{{ tree.common_name }}">{{ tree.common_name }} - {{ tree.scientific_name }}</a>
                     {% endfor %}
                 </div>
             </div>

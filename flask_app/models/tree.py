@@ -138,7 +138,8 @@ class Tree:
     def get_all_trees(cls):
         query = """
             SELECT *
-            FROM trees;
+            FROM trees
+            ORDER BY scientific_name;
             """
         results = connectToMySQL(cls.db).query_db(query)
         all_trees = []
