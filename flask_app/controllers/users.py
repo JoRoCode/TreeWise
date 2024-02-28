@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models import user # import entire file, rather than class, to avoid circular imports
+from flask_app.models import user, quiz # import entire file, rather than class, to avoid circular imports
 # As you add model files add them the the import above
 # This file is the second stop in Flask's thought process, here it looks for a route that matches the request
 
@@ -39,6 +39,7 @@ def importance():
 def show_user_account():
     if 'user_id' not in session: return redirect('/')
     user_data = user.User.get_user_by_id(session['user_id'])
+    quiz_data = quiz.Quiz.get_all_quizs_by_user_id(session['user_id'])
     return render_template('account.html', user = user_data)
 
 # Update Users Controller

@@ -2,7 +2,7 @@ let questions =
 [
     {numb: 1,
     question: [
-        'green_ash_bark',
+        'green_ash_bark.jpg',
         '319px-Fraxinus_pennsylvanica.jpg',
         '640px-Fraxinus_pensylvanica_a1.jpg',
         'Green_ash_fall.jpg'],

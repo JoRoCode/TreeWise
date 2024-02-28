@@ -180,6 +180,9 @@ function headerScore() {
 }
 
 function showResultBox() {
+    console.log(userScore, "USER SCORE!!!!")
+    sendResults();
+
     quizBox.classList.remove('active');
     resultsBox.classList.add('active');
 
@@ -202,4 +205,19 @@ function showResultBox() {
         clearInterval(progress);
         }
     }, speed);
+}
+
+function sendResults() {
+    console.log(userScore, "USERSCORE**********")
+    $.ajax({
+        url: '/process',
+        type: 'POST',
+        data: {'score': userScore},
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    })
 }

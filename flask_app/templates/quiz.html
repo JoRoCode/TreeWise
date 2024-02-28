@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/questions.js') }}" defer></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>TreeWise</title>
 </head>
 <body>
@@ -73,11 +74,11 @@
     </div>
     <div class="popup_quiz">
         <h2>Tree Quiz</h2>
-        <span class="info">1. Lorem ipsum, dolor sit amet consectetur</span>
-        <span class="info">2. Lorem ipsum, dolor sit amet consectetur</span>
-        <span class="info">3. Lorem ipsum, dolor sit amet consectetur</span>
-        <span class="info">4. Lorem ipsum, dolor sit amet consectetur</span>
-        <span class="info">5. Lorem ipsum, dolor sit amet consectetur</span>
+        <span class="info">1. Take a look at the pictures provided.</span>
+        <span class="info">2. Compare the options provided. </span>
+        <span class="info">3. Use the new information you have learned to pick an option.</span>
+        <span class="info">4. Take a look at your results.</span>
+        <span class="info">5. Try again or compare your results to past quizes</span>
         <div class="button_group">
             <button onclick="stopQuiz()" class="info_button">Exit Quiz</button>
             <button onclick="continueQuiz()" class="info_button continueBtn">Continue</button>
