@@ -38,9 +38,10 @@ def importance():
 @app.get('/user/account')
 def show_user_account():
     if 'user_id' not in session: return redirect('/')
+    print(session['user_id'], "SESSION!!@!")
     user_data = user.User.get_user_by_id(session['user_id'])
     quiz_data = quiz.Quiz.get_all_quizs_by_user_id(session['user_id'])
-    return render_template('account.html', user = user_data)
+    return render_template('account.html', user = user_data, quiz_data = quiz_data)
 
 # Update Users Controller
 @app.post('/user/update')

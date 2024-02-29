@@ -21,18 +21,23 @@ class Quiz:
                 %(score)s,
                 %(user_id)s);
         """
-        print(query)
         result = connectToMySQL(cls.db).query_db(query,data)
-        print(result)
         return result
 
 
 # Read Quiz Methods
 
     @classmethod
-    def get_all_quizs_by_user_id(id):
-        query+"""
+    def get_all_quizs_by_user_id(cls,data):
+        id = {'id': data}
+        query = """
             SELECT *
             FROM quizs
             WHERE user_id = %(id)s;
         """
+        results =  connectToMySQL(cls.db).query_db(query,id)
+        if results:
+            return results
+        return False
+        
+        

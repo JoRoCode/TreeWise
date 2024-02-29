@@ -56,7 +56,7 @@
                                     {% if comment.creator.id == session.user_id %}
                                     <div>
                                         <a href="/user/comment/delete/{{ comment.id }}">delete</a> | 
-                                        <button onclick="showForm({{comment.id}})" type="button" class="show_popup">edit</-button>
+                                        <a onclick="showForm({{comment.id}})" type="button" class="show_popup">edit</a>
                                     </div>
                                     <div class="popup_container" id="popup_container{{ comment.id }}">
                                         <div class="popup_box">

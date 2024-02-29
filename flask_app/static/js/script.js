@@ -208,11 +208,12 @@ function showResultBox() {
 }
 
 function sendResults() {
-    console.log(userScore, "USERSCORE**********")
+    let thisScore = userScore*10;
+    console.log(thisScore, "USERSCORE**********")
     $.ajax({
         url: '/process',
         type: 'POST',
-        data: {'score': userScore},
+        data: {'score': thisScore},
         success: function(response) {
             console.log(response);
         },
