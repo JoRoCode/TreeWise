@@ -1,3 +1,4 @@
+const commentOff = document.querySelector('.popup_container')
 const quizHeader = document.querySelector('.header');
 const quizSection = document.querySelector('.quiz_section');
 const popupQuiz = document.querySelector('.popup_quiz');
@@ -13,8 +14,12 @@ let userScore = 0;
 // Function for the update comment popup
 
 const showForm = id => {
-    const form = document.getElementById(`popup_container${id}`)
-    form.classList.add("active")
+    const form = document.getElementById(`popup_container${id}`);
+    form.classList.add("active");
+}
+
+function commentOffNow(){
+    commentOff.classList.remove("active");
 }
 
 // Function for the hardieness zone API

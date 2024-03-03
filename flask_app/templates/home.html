@@ -65,8 +65,11 @@
                                                 <label>
                                                     <textarea name="comment" id="comment" cols="50" rows="8">{{ comment.comment }}</textarea>
                                                 </label>
-                                                <input type="submit" class="close_button button" value="Post">
+                                                <div class="flex">
+                                                    <input type="submit" class="close_button button" value="Post">
+                                                </div>
                                             </form>
+                                                    <button onclick="commentOffNow()" class="button">Cancel</button>
                                         </div>
                                     </div>
                                     {% endif %}

@@ -96,12 +96,13 @@
     margin: 2% 18%;
     border-radius: 15px;
     padding-bottom: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main-info{
     margin: 15px;
     padding: 10px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .main-info-tree{
@@ -177,6 +178,7 @@ input, select {
     border-radius: 10px;
     display: block;
     padding: 15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 
 #comment_form input{
@@ -283,6 +285,13 @@ text-decoration: none;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.desc_style {
+    padding: 15px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    border: 2px solid black;
+    border-radius: 6px;
 }
 
 .show_popup{

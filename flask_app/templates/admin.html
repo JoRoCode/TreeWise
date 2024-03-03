@@ -86,7 +86,7 @@
                                 <input type="text" name="fall_foliage">
                             </label>
                             <label>Description
-                                <textarea name="description"  cols="50" rows="10"></textarea>
+                                <textarea class="desc_style" name="description"  cols="50" rows="10"></textarea>
                             </label>
                             <input type="submit" class="button"  value="Add Tree">
                         </form>
@@ -169,7 +169,7 @@
                                 <input type="text" name="fall_foliage"  value="{{ tree.fall_foliage }}">
                             </label>
                             <label>Description
-                                <textarea name="description"  cols="50" rows="10">{{ tree.description }}</textarea>
+                                <textarea name="description"  cols="50" rows="10" class="desc_style">{{ tree.description }}</textarea>
                             </label>
                             <input type="submit" class="button"  value="Edit Tree">
                         </form>
