@@ -6,11 +6,8 @@ from flask_app.models import tree, picture,quiz
 @app.post('/process')
 def get_quiz_results():
     data = request.form.get('score')
-    print(session)
-    print("DATA!!!", data)
     quiz_data = {'score' : data ,
-            'user_id': session['user_id']}
-    print("QDATA!!!", quiz_data)
+        'user_id': session['user_id']}
     quiz.Quiz.submit_quiz_results(quiz_data)
     return 
 

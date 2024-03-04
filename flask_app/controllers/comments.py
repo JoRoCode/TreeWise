@@ -33,6 +33,5 @@ def delete_comment(comment_id):
 @app.post('/user/comment/update')
 def update_comment():
     if 'user_id' not in session: return redirect('/')
-    print(request.form)
     comment.Comment.update_user_comment(request.form)
     return redirect('/home')

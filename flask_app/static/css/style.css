@@ -220,8 +220,8 @@ input, select {
 }
 
 .comment a {
-color: darkgreen;
-text-decoration: none;
+    color: darkgreen;
+    text-decoration: none;
 }
 
 .comment_head{
@@ -326,10 +326,10 @@ text-decoration: none;
 }
 
 .sph1 h1{
-font-size: 55px;
-font-style: oblique;
-margin: 25px;
-color: #0f1b0b;
+    font-size: 55px;
+    font-style: oblique;
+    margin: 25px;
+    color: #0f1b0b;
 }
 
 .species_list {
@@ -731,7 +731,7 @@ color: #0f1b0b;
 .quiz_section .results_box.active {
     opacity: 1;
     pointer-events: auto;
-        transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
 
 }
 
@@ -768,7 +768,7 @@ color: #0f1b0b;
 }
 
 .circular_progress .progress_value {
-position: relative;
+    position: relative;
     font-size: 42px;
     font-weight: 600;
 }

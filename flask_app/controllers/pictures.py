@@ -21,7 +21,6 @@ def upload_file():
         flash('No file selected')
         return redirect('/admin')
     if file:
-        print(file, "!!!!!!!!!!!!!!!!1")
         if extension not in app.config['ALLOWED_EXTENSIONS']:
             flash('File is not an image')
             return redirect('/admin')
@@ -29,9 +28,6 @@ def upload_file():
             app.config['UPLOAD_FOLDER'],
             secure_filename(file.filename)))
         flash('Image successfully uploaded.')
-        print(file)
-        print(secure_filename(file.filename))
-        print(request.form)
     picture.Picture.add_picture_to_database(
         secure_filename(file.filename), request.form['attribute'],
         request.form['id'])

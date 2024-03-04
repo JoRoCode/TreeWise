@@ -30,9 +30,7 @@ class Picture:
                 %(attribute)s,
                 %(tree_id)s);
             """
-        print(query)
         results = connectToMySQL(cls.db).query_db(query,picture_data)
-        print(results)
         return results
     
     # Read Picture Method
@@ -48,7 +46,6 @@ class Picture:
             WHERE common_name = %(common_name)s;
             """
         results = connectToMySQL(cls.db).query_db(query, common_name)
-        print(results)
         all_pictures = []
         for result in results:
             this_picture = cls(result)

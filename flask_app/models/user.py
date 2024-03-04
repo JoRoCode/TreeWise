@@ -52,7 +52,6 @@ class User:
                 %(password)s);
             """
         user_id = connectToMySQL(cls.db).query_db(query,user_data)
-        print(user_id)
         session['user_id'] = user_id
         session['first_name'] = user_data['first_name']
         return user_id
@@ -75,15 +74,12 @@ class User:
     @classmethod
     def get_user_by_email(cls,data):
         email= {'email' : data}
-        print(data, "data")
-        print(email, "email")
         query = """
             SELECT *
             FROM users
             WHERE email = %(email)s;
             """
         result = connectToMySQL(cls.db).query_db(query,email)
-        print(result)
         if result:
             return cls(result[0])
         return False
@@ -93,7 +89,6 @@ class User:
     @classmethod
     def update_user_info(cls,data):
         if not cls.validate_user_on_update(data): return False
-        print(data)
         query = """
             UPDATE
                 users

@@ -31,7 +31,6 @@ class Tree:
     @classmethod
     def create_new_tree(cls,tree_data):
         if not cls.validate_tree(tree_data): return False
-        print(tree_data)
         query = """
             INSERT INTO
                 trees

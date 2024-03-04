@@ -106,7 +106,6 @@ class Comment:
             WHERE id = %(id)s
             ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
-        print(results, '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
         return results
 
 # instantiate user
