@@ -11,6 +11,7 @@ app.config['ALLOWED_EXTENSIONS'] = {'.png', '.jpg', '.jpeg', '.gif'}
 
 @app.post('/upload/picture')
 def upload_file():
+    if 'user_id' not in session: return redirect('/')
     if session['user_id'] != 1: return redirect('/home')
     file = request.files['picture']
     extension = os.path.splitext(file.filename)[1]
@@ -35,4 +36,5 @@ def upload_file():
 
 @app.get('/serve_image/<filename>')
 def serve_image(filename):
+    if 'user_id' not in session: return redirect('/')
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)

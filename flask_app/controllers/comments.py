@@ -6,6 +6,7 @@ from flask_app.models import user, comment
 
 @app.post('/user/comment')
 def create_new_comment():
+    if 'user_id' not in session: return redirect('/')
     if comment.Comment.create_new_comment(request.form):
         return redirect('/home') # redirect to the show page
     return redirect('/home')
@@ -14,7 +15,6 @@ def create_new_comment():
 
 @app.get('/home')
 def display_home_page():
-    print(session, "This is session") 
     if 'user_id' not in session: return redirect('/')
     user_data = user.User.get_user_by_id(session['user_id'])
     comments = comment.Comment.get_all_comments_with_creator()

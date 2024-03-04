@@ -6,7 +6,7 @@ from flask_app.models import user
 
 
 class Comment:
-    db = "treewise" #which database are you using for this project
+    db = "treewise" 
     def __init__(self, data):
         self.id = data['id']
         self.comment = data['comment']

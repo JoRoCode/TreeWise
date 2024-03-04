@@ -5,9 +5,7 @@ from flask import flash, session, request
 import re
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
-# The above is used when we do login registration, flask-bcrypt should already be in your env check the pipfile
 
-# Remember 'fat models, skinny controllers' more logic should go in here rather than in your controller. Your controller should be able to just call a function from the model for what it needs, ideally.
 
 class User:
     db = "treewise" #which database are you using for this project
@@ -23,8 +21,7 @@ class User:
         self.updated_at = data['updated_at']
         self.confirm_password = None
         self.comments = []
-        # What changes need to be made above for this project?
-        #What needs to be added here for class association? !!!!!!!!!!!!!
+
 
 
 

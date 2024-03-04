@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Above is how we link our style sheet. url_for creates a url based on the static folder, and file name given -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-    <!-- Above is how we link our JS file. Make sure that you understand why we use defer -->
     <title>TreeWise</title>
 </head>
 <body>
@@ -35,13 +33,3 @@
 </body>
 </html>
 
-
-<!-- 
-<div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Importance of Tree Identification</a>
-                <a class="nav-link" href="#">Colorado Tree Species</a>
-                <a class="nav-link" href="#">Take a Quiz</a>
-                <a class="nav-link" href="#">Account</a>
-                </div> -->
-<!-- Format for adding images -->
-<!-- <img src="{{ url_for('static', filename='images/img.png') }}"> -->
