@@ -31,7 +31,7 @@
                 <h1>Welcome, {{ user.first_name }}</h1>
                 <p>Congratulations on taking the next step to enhancing your professional, personal or recreational life! Make sure to introduce your self below.  If you have any questions, want to post your latest quiz results or just plain talk trees feel free to do so.  </p>
                 <div class="flex">
-                    <div>
+                    <div class="flex_even">
                         <form action="/user/comment" id="comment_form" method="post">
                             <input type="hidden" name="user_id" value="{{ session.user_id }}">
                             <label for="comment">
@@ -75,7 +75,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="block">
+                    <div class=" block">
                         <div class="home_tree">
                             <img src="/static/images/home_tree.png">
                             <p>Green ash tree located in Arvada, CO on a beautiful fall morning<p>

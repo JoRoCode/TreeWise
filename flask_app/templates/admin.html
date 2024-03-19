@@ -89,10 +89,10 @@
                             <input type="submit" class="button"  value="Add Tree">
                         </form>
                     </div>
-                    <div>
+                    <div class="create_tree">
                         <h2>Add Images to Tree</h2>
-                        <form action="/upload/picture" method="post" class="block" enctype="multipart/form-data">
-                            <label>Select a Tree
+                        <form action="/upload/picture" method="post" class="create_tree" enctype="multipart/form-data">
+                            <label class="create_tree">Select a Tree
                                 <select name="id">
                                     {% for tree in trees %}
                                         <option value="{{ tree.id }}">{{ tree.common_name }}</option>
