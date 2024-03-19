@@ -260,3 +260,6 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/flask,python
+flask_app/models/__pycache__/user.cpython-312.pyc
+flask_app/controllers/__pycache__/users.cpython-312.pyc
+flask_app/config/__pycache__/mysqlconnection.cpython-312.pyc

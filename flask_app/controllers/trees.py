@@ -58,4 +58,6 @@ def search_by_common_name():
     if 'user_id' not in session: return redirect('/')
     tree_name = request.form['name']
     tree_data = tree.Tree.get_tree_by_multiple_varieables(tree_name)
-    return redirect(f'/species/{tree_data}')
+    if tree_data:
+        return redirect(f'/species/{tree_data}')
+    return redirect('/species')

@@ -84,6 +84,12 @@
     justify-content: space-between;
 }
 
+.flex_start{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
 .block label{
     display: block;
     margin-right: 125px;
@@ -367,8 +373,6 @@ input, select {
     margin: 15px;
     padding: 10px;
     font-weight: bold;
-    align-items: start !important;
-
 }
 
 .show_tree table {
