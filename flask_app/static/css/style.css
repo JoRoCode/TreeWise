@@ -1,7 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,a,button {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: #b6cbce;
+    transform: all 0.4s ease;
+}
+
+a:hover {
+    color: rgb(1, 63, 1);
+}
+
+.navbar .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.navbar .nav-link:hover {
+    color: lawngreen;
+}
+
+.navbar .nav-link.active {
+    color: rgba(126, 252, 0, 0.3);
 }
 
 .header{
@@ -21,41 +51,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 30px;
     border-bottom: 1px solid antiquewhite;
     background-color:#384733;
 }
 
-.top-nav ul li{
-    list-style: none;
-    display: inline-block;
-    margin-right: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
-.top-nav ul li a{
-    text-decoration: none;
-    color: antiquewhite;
-    font-size: 20px;
-    font-weight: bold;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 .button{
     background-color: rgb(26, 102, 26);
     color: antiquewhite;
     border: none;
     outline: none;
-    border-radius: 30px;
-    padding: 10px 20px;
     cursor: pointer;
-    margin: 10px;
     text-decoration: none;
 }
 
 .button:hover {
     background: rgb(11, 69, 11);
+    border-color: 2px solid lawngreen;
+    color: antiquewhite;
 }
 
 #search-field{
