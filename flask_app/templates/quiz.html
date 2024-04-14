@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/aos.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/questions.js') }}" defer></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
@@ -12,22 +14,37 @@
 </head>
 <body>
     <div class="header">
-        <div class="top-nav">
-            <a href="/home"><img src="/static/images/cover.png" alt="TreeWise Logo" id="logo"></a>
-            <div>
-                <ul>
-                    <li><a href="/importance">Importance of Tree Identification</a></li>
-                    <li><a href="/species">Colorado Tree Species</a></li>
-                    <li><a href="/quiz">Take a Quiz</a></li>
-                    <li><a href="/user/account">Account</a></li>
-                </ul>
-                <form action="/species/search" id="search" method="post">
-                    <input type="search" name="name" id="search-field" placeholder="Search Colorado Trees..." autocomplete="off">
-                    <input type="submit" class="button" value="Search">
-                </form>
+        <nav class="navbar navbar-expand-md top-nav">
+            <a href="/home" class="navbar-brand m-0 px-3"><img src="../static/images/cover.png" class="logo" alt="TreeWise Logo" id="logo"></a>
+            <div class="container">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav-menu">
+                    <div class="col-8">
+                        <div class="container ">
+                            <div class="row">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item"><a href="/importance" class="nav-link">Importance of Tree Identification</a></li>
+                                    <li class="nav-item"><a href="/species" class="nav-link">Colorado Tree Species</a></li>
+                                    <li class="nav-item"><a href="/quiz" class="nav-link">Take a Quiz</a></li>
+                                    <li class="nav-item"><a href="/user/account" class="nav-link">Account</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <form action="/species/search" id="search" method="post">
+                                    <input type="search" name="name" class="rounded-4" id="search-field" placeholder="Search Colorado Trees..." autocomplete="off">
+                                    <input type="submit" class="rounded-4 button" value="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col ms-auto">
+                        <a href="/user/logout" class="rounded-4 py-1 button">Logout</a>
+                    </div>
+                </div>
             </div>
-            <a href="/user/logout" class="button">Logout</a>
-        </div>
+        </nav>
         <div class="opaq_back">
             <div class="main-info_quiz">
                 <div class="quiz_section">
@@ -84,5 +101,7 @@
             <button onclick="continueQuiz()" class="info_button continueBtn">Continue</button>
         </div>
     </div>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/aos.js"></script>
 </body>
 </html>
