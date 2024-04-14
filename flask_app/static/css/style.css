@@ -55,7 +55,16 @@ a:hover {
     background-color:#384733;
 }
 
-
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid rgb(245, 245, 245, 0.1);
+}
 
 .button{
     background-color: rgb(26, 102, 26);
@@ -891,3 +900,24 @@ flex: auto;
     justify-content: center;
     padding: 5px;
 }
+
+
+
+#contact .form-control {
+    background-color: darkslategray;
+    border-color: rgb(1, 32, 46);
+}
+
+#contact .form-control:focus {
+    border: 2px solid lawngreen;
+    box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+    color: whitesmoke;
+}
+
+#contact input.form-control {
+    height: 50px;
+}
+
