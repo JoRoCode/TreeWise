@@ -51,11 +51,9 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-8 d-flex-column g-4 justify-content-md-center">
-                        <form action="/user/comment" id="comment_form" method="post">
+                        <form action="/user/comment" class="d-flex-column align-items-center justify-content-center" id="comment_form" method="post">
                             <input type="hidden" name="user_id" value="{{ session.user_id }}">
-                            <label for="comment">
-                                <textarea name="comment" id="comment" cols="50" rows="8"></textarea>
-                            </label>
+                            <textarea name="comment" class="rounded-4 p-3" id="comment" rows="6"></textarea>
                             <input type="submit" class="button" value="Submit">
                         </form>
                         <div class="comment-box">

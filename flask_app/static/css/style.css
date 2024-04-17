@@ -200,13 +200,15 @@ input, select {
     padding: 10px;
 }
 
-/* #comment {
-    border: 3px solid black;
-    border-radius: 10px;
-    display: block;
-    padding: 15px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-} */
+#comment {
+    background-color:#124201;
+    color:antiquewhite;
+    border: 3px none black;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+
+}
 
 /* #comment_form input{
     width: 90px;
