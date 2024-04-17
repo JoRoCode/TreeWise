@@ -127,21 +127,14 @@ a:hover {
     background-color: antiquewhite;
     opacity: 85%;
     height:auto;
-    margin: 2% 18%;
-    border-radius: 15px;
-    padding-bottom: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main-info{
-    margin: 15px;
-    padding: 10px;
     font-weight: 500;
 }
 
 .main-info-tree{
-    margin: 15px;
-    padding: 20px;
     font-weight: bold;
     font-size: 20px;
     text-indent: 20px;
@@ -207,17 +200,17 @@ input, select {
     padding: 10px;
 }
 
-#comment {
+/* #comment {
     border: 3px solid black;
     border-radius: 10px;
     display: block;
     padding: 15px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-}
+} */
 
-#comment_form input{
+/* #comment_form input{
     width: 90px;
-}
+} */
 
 .home_tree{
     width: 325px;

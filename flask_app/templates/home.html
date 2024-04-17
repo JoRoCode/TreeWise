@@ -37,18 +37,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col ms-auto">
+                    <div class="col m-auto">
                         <a href="/user/logout" class="rounded-4 py-1 button">Logout</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <div class="opaq_back">
-            <div class="main-info">
-                <h1>Welcome, {{ user.first_name }}</h1>
-                <p>Congratulations on taking the next step to enhancing your professional, personal or recreational life! Make sure to introduce your self below.  If you have any questions, want to post your latest quiz results or just plain talk trees feel free to do so.  </p>
-                <div class="flex">
-                    <div class="flex_even">
+        <div class="container m-sm-3 m-md-3 pb-5 g-5 rounded-4 opaq_back">
+            <div class="row p-4 main-info d-flex justify-content-md-center">
+                <div class="row">
+                    <h1>Welcome, {{ user.first_name }}</h1>
+                    <p>Congratulations on taking the next step to enhancing your professional, personal or recreational life! Make sure to introduce your self below.  If you have any questions, want to post your latest quiz results or just plain talk trees feel free to do so.  </p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 d-flex-column g-4 justify-content-md-center">
                         <form action="/user/comment" id="comment_form" method="post">
                             <input type="hidden" name="user_id" value="{{ session.user_id }}">
                             <label for="comment">
@@ -92,7 +94,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <div class=" block">
+                    <div class="col-md-4 px-3">
                         <div class="home_tree">
                             <img src="/static/images/home_tree.png">
                             <p>Green ash tree located in Arvada, CO on a beautiful fall morning<p>
