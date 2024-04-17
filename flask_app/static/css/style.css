@@ -127,7 +127,6 @@ a:hover {
     background-color: antiquewhite;
     opacity: 85%;
     height:auto;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main-info{
@@ -916,3 +915,8 @@ flex: auto;
     height: 50px;
 }
 
+footer {
+    background-color: rgb(1, 63, 1);
+    font-weight: 500;
+    color: antiquewhite;
+}
