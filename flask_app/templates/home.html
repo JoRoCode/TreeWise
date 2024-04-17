@@ -43,20 +43,20 @@
                 </div>
             </div>
         </nav>
-        <div class="container m-sm-3 m-md-3 pb-5 g-5 rounded-4 opaq_back">
+        <div class="container mx-auto pb-5 g-5 rounded-4 opaq_back">
             <div class="row p-4 m-3 main-info">
                 <div class="row">
                     <h1>Welcome, {{ user.first_name }}</h1>
                     <p>Congratulations on taking the next step to enhancing your professional, personal or recreational life! Make sure to introduce your self below.  If you have any questions, want to post your latest quiz results or just plain talk trees feel free to do so.  </p>
                 </div>
                 <div class="row gx-5">
-                    <div class="col-md-12 col-lg-8 d-flex-column g-4 justify-content-md-center">
+                    <div class="col-md-12 col-lg-8">
                         <form action="/user/comment" class="d-flex-column align-items-center justify-content-center" id="comment_form" method="post">
                             <input type="hidden" name="user_id" value="{{ session.user_id }}">
                             <textarea name="comment" class="rounded-4 p-3" id="comment" rows="6"></textarea>
                             <input type="submit" class="button" value="Submit">
                         </form>
-                        <div class="comment-box">
+                        <div class="comment-box my-4">
                             <h2>What are people saying?</h2>
                             {% for comment in comments %}
                                 <div class="comment">
