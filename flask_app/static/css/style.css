@@ -360,8 +360,8 @@ flex: auto;
     overflow: auto;
 }
 
-.species_list li a {
-    margin: 8px;
+.species_list a {
+    border-bottom: 1px solid #124201;
     text-decoration: none;
     color: rgb(231, 230, 230);
 }
