@@ -44,12 +44,12 @@
             </div>
         </nav>
         <div class="container mx-auto pb-5 g-5 rounded-4 opaq_back">
-            <div class="main-info sph1">
+            <div class="main-info sph1 m-4 row">
                 <h1>Colorado Tree Species</h1>
-                <div  class="species_list block">
+                <div  class="species_list rounded-4 p-5 m-2 block">
                     {% for tree in trees %}
                         <!-- <h3>{{ tree.genus }}</h3> -->
-                        <a href="/species/{{ tree.common_name }}">{{ tree.common_name }} - {{ tree.scientific_name }}</a>
+                            <a class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-1" href="/species/{{ tree.common_name }}">{{ tree.common_name }} - {{ tree.scientific_name }}</a>
                     {% endfor %}
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="row gy-4 justify-content-between">
                     <div class="col-auto">
-                        <p class="mb-0">© 2024 Jonathan Rodgers</p>
+                        <p class="mb-0">© 2024 TreeWise Jonathan Rodgers</p>
                     </div>
                 </div>
             </div>

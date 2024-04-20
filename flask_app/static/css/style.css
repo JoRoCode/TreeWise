@@ -55,17 +55,6 @@ a:hover {
     background-color:#384733;
 }
 
-.full-height {
-    min-height: 100vh;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    border-bottom: 2px solid rgb(245, 245, 245, 0.1);
-}
-
 .button{
     background-color: rgb(26, 102, 26);
     color: antiquewhite;
@@ -209,9 +198,6 @@ input, select {
 
 }
 
-/* #comment_form input{
-    width: 90px;
-} */
 
 .home_tree{
     width: 325px;
@@ -359,31 +345,29 @@ flex: auto;
 
 .sph1 h1{
     font-size: 55px;
-    font-style: oblique;
-    margin: 25px;
     color: #0f1b0b;
 }
 
 .species_list {
     background: #0f1b0b;
-    border-radius: 15px;
-    margin: 20px;
-    padding: 18px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-wrap:wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     font-size: 18px;
     font-weight: bold;
     height: 800px;
     overflow: auto;
 }
 
-.species_list a {
+.species_list li a {
     margin: 8px;
     text-decoration: none;
     color: rgb(231, 230, 230);
+}
+
+.species_list a:hover {
+    color: lawngreen;
 }
 
 .species_list h3 {
