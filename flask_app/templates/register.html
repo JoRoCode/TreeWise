@@ -12,14 +12,20 @@
 </head>
 <body>
     <div class="header">
-        <div class="top-nav">
-            <img src="/static/images/cover.png" alt="TreeWise Logo" id="logo">
-            <div>
-                <a class="button" href="/login">Login</a>
+        <nav class="navbar-brand m-0 px-3 top-nav">
+            <div class="container-fluid">
+                <div class="row d-flex-column align-items-center">
+                    <div class="col">
+                        <img src="../static/images/cover.png" class="logo" alt="TreeWise Logo" id="logo">
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-2">
+                        <a class="button rounded-4 p-2 m-3" href="/login">Login</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </nav>
         <div class="container mx-auto pb-5 g-5 rounded-4 opaq_back">
-            <div class="main-info">
+            <div class="main-info row">
                 <h1>Register a new account</h1>
                 <div class="flash">
                     {% with messages = get_flashed_messages() %}
@@ -30,7 +36,7 @@
                         {% endif %}
                     {% endwith %}
                 </div>
-                <div class="center">
+                <div class="row center">
                     <form action="/user/register" method="post" class="reg_form">
                         <label>First Name:
                             <input type="text" name="first_name">
@@ -71,7 +77,7 @@
             <div class="container">
                 <div class="row gy-4 justify-content-between">
                     <div class="col-auto">
-                        <p class="mb-0">© 2024 Jonathan Rodgers</p>
+                        <p class="mb-0">© 2024 TreeWise Jonathan Rodgers</p>
                     </div>
                 </div>
             </div>

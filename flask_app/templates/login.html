@@ -12,23 +12,33 @@
 </head>
 <body>
     <div class="header">
-        <div class="top-nav">
-            <img src="/static/images/cover.png" alt="TreeWise Logo" id="logo">
-            <a href="/register" class="button">Create New Account</a>
-        </div>
+        <nav class="navbar-brand m-0 px-3 top-nav">
+            <div class="container-fluid">
+                <div class="row d-flex-column align-items-center">
+                    <div class="col">
+                        <img src="../static/images/cover.png" class="logo" alt="TreeWise Logo" id="logo">
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-2">
+                        <a class="button rounded-4 p-2 m-3" href="/register">Create an Account</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
         <div class="container mx-auto pb-5 g-5 rounded-4 opaq_back">
             <div class="main-info">
-                <h1>User Login</h1>
-                <div class="flash">
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <p>{{ message }}</p>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
+                <div class="row">
+                    <h1>User Login</h1>
+                    <div class="flash">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
                 </div>
-                <div class="center">
+                <div class="row center">
                     <form action="/user/login" method="post" class="reg_form">
                         <label>Email:
                             <input type="email" name="email">
@@ -45,7 +55,7 @@
             <div class="container">
                 <div class="row gy-4 justify-content-between">
                     <div class="col-auto">
-                        <p class="mb-0">© 2024 Jonathan Rodgers</p>
+                        <p class="mb-0">© 2024 TreeWise Jonathan Rodgers</p>
                     </div>
                 </div>
             </div>
