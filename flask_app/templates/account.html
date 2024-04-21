@@ -43,54 +43,56 @@
                 </div>
             </div>
         </nav>
-        <div class="container mx-auto p-5 m-5 rounded-4 opaq_back">
-            <div class="main-info flex flex_even">
-                <div class="Qresults_sec">
+        <div class="container p-5 m-5 rounded-4 opaq_back">
+            <div class="main-info row">
+                <div class="Qresults_sec col mx-1 rounded-4">
                     <h2>{{ session.first_name }}'s Quiz results</h2>
-                    <table>
+                    <table class="mx-auto">
                         <thead class="quizR_head">
-                            <th>Quiz I.D. number:</th>
+                            <th>Quiz ID:</th>
                             <th>Date:</th>
                             <th>Score</th>
                         </thead>
-                        {% for quiz in quiz_data %}
+                        <tbody>
+                            {% for quiz in quiz_data %}
+                                <tr>
+                                    <td>{{ quiz.id }}.</td>
+                                    <td>{{ quiz.created_at }}</td>
+                                    <td>{{ quiz.score }}%</td>
+                                </tr>
+                            {% endfor %}
                             <tr>
-                                <td>{{ quiz.id }}.</td>
-                                <td>{{ quiz.created_at }}</td>
-                                <td>{{ quiz.score }}%</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
-                        {% endfor %}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
-                <div class="right_act_side">
-                    <div class="act_upd_fr">
-                        <h2>{{ user.first_name }}'s Account Info</h2>
-                        <form action="/user/update" method="post">
+                <div class="col">
+                    <h2>{{ user.first_name }}'s Account Info</h2>
+                    <div>
+                        <form action="/user/update" method="post" class="mx-auto">
                             <input type="hidden" name="id" value="{{ user.id }}">
                             <label>First Name:
                                 <input type="text" name="first_name" value="{{ user.first_name }}">
