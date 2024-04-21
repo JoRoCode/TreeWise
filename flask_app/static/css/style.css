@@ -374,33 +374,25 @@ flex: auto;
     color: rgb(19, 156, 19);
     font-size: 25px;
     border-bottom: 2px solid darkgreen;
-    margin: 6px;
-    padding: 5px;
 }
 
 .show_tree {
     color:#0f1b0b;
-    margin: 15px;
-    padding: 10px;
     font-weight: bold;
 }
 
 .show_tree table {
     background: #0f1b0b;
-    border-radius: 12px;
     color: whitesmoke;
-    margin: 10px;
-    padding: 30px;
 }
 
 .tr_space td {
     font-weight: 100;
     font-size: 18px;
-    padding: 10px 30px;
 }
 
 .tree_picture {
-    width: 350px;
+    max-width: 350px;
     padding: 10px;
     margin: 10px;
     opacity: 1;
