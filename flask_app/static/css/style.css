@@ -384,6 +384,7 @@ flex: auto;
 .show_tree table {
     background: #0f1b0b;
     color: whitesmoke;
+    padding: 15px;
 }
 
 .tr_space {
