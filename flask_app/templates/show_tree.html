@@ -43,74 +43,72 @@
             </div>
         </nav>
         <div class="container mx-auto p-5 m-5 rounded-4 opaq_back">
-            <div class="row text-center">
-                <div class="main-info row show_tree">
-                    <h1>{{ tree.common_name }}</h1>
-                    <h2>{{  tree.scientific_name  }}</h2>
-                    <div class="col-8 p-3">
-                        <table class="block rounded-4" >
-                            <tr class="tr_space">
-                                <th>Order:</th>
-                                <td>{{ tree.tree_order }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Family:</th>
-                                <td>{{ tree.family }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Genus:</th>
-                                <td>{{ tree.genus }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Species:</th>
-                                <td>{{ tree.species }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Deciduous or Evergreen:</th>
-                                <td>{{ tree.deciduous }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Mature Height:</th>
-                                <td>{{ tree.mature_height }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Mature Diameter:</th>
-                                <td>{{ tree.mature_diameter }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Growth Rate:</th>
-                                <td>{{ tree.growth_rate }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Hardiness Zones:</th>
-                                <td>{{ tree.hardiness_zone }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Leaf Type:</th>
-                                <td>{{ tree.leaf_type }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Spring Foliage Color:</th>
-                                <td>{{ tree.spring_foliage }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Fall Foliage Color:</th>
-                                <td>{{ tree.fall_foliage }}</td>
-                            </tr>
-                            <tr class="tr_space">
-                                <th>Description:</th>
-                                <td>{{ tree.description }}</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="tree_picture col-m-4">
-                        {% for picture in pictures %}
-                            <div class="m-2 p-3">
-                                <img src="/static/images/{{picture.path}}" class="tree_picture" alt="tree">
-                                <p>{{ picture.attribute }}</p>
-                            </div>
-                        {% endfor %}
-                    </div>
+            <div class="main-info row text-center show_tree">
+                <h1>{{ tree.common_name }}</h1>
+                <h2>{{  tree.scientific_name  }}</h2>
+                <div class="col-md-12 col-lg-8">
+                    <table class="rounded-4" >
+                        <tr class="tr_space">
+                            <th>Order:</th>
+                            <td>{{ tree.tree_order }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Family:</th>
+                            <td>{{ tree.family }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Genus:</th>
+                            <td>{{ tree.genus }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Species:</th>
+                            <td>{{ tree.species }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Deciduous or Evergreen:</th>
+                            <td>{{ tree.deciduous }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Mature Height:</th>
+                            <td>{{ tree.mature_height }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Mature Diameter:</th>
+                            <td>{{ tree.mature_diameter }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Growth Rate:</th>
+                            <td>{{ tree.growth_rate }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Hardiness Zones:</th>
+                            <td>{{ tree.hardiness_zone }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Leaf Type:</th>
+                            <td>{{ tree.leaf_type }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Spring Foliage Color:</th>
+                            <td>{{ tree.spring_foliage }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Fall Foliage Color:</th>
+                            <td>{{ tree.fall_foliage }}</td>
+                        </tr>
+                        <tr class="tr_space">
+                            <th>Description:</th>
+                            <td>{{ tree.description }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tree_picture col-sm-12 col-lg-4">
+                    {% for picture in pictures %}
+                        <div class="m-2">
+                            <img src="/static/images/{{picture.path}}" class="tree_picture" alt="tree">
+                            <p>{{ picture.attribute }}</p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -386,15 +386,13 @@ flex: auto;
     color: whitesmoke;
 }
 
-.tr_space td {
+.tr_space {
     font-weight: 100;
     font-size: 18px;
 }
 
 .tree_picture {
     max-width: 350px;
-    padding: 10px;
-    margin: 10px;
     opacity: 1;
 }
 
