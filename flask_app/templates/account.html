@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="..//static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/aos.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="header">
-        <nav class="navbar navbar-expand-md top-nav">
+        <nav class="navbar navbar-expand-lg top-nav">
             <a href="/home" class="navbar-brand m-0 px-3"><img src="../static/images/cover.png" class="logo" alt="TreeWise Logo" id="logo"></a>
             <div class="container">
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
@@ -32,7 +32,7 @@
                             </div>
                             <div class="row">
                                 <form action="/species/search" id="search" method="post">
-                                    <input type="search" name="name" class="rounded-4" id="search-field" placeholder="Search Colorado Trees..." autocomplete="off">
+                                    <input type="search" name="name" class="rounded-4 m-3" id="search-field" placeholder="Search Colorado Trees..." autocomplete="off">
                                     <input type="submit" class="rounded-4 button" value="Search">
                                 </form>
                             </div>
@@ -44,11 +44,11 @@
                 </div>
             </div>
         </nav>
-        <div class="container p-5 m-5 rounded-4 opaq_back">
+        <div class="container mx-auto p-5 m-5 rounded-4 opaq_back">
             <div class="main-info row">
                 <div class="Qresults_sec col mx-1 rounded-4">
                     <h2>{{ session.first_name }}'s Quiz results</h2>
-                    <table class="mx-auto">
+                    <table class="mx-auto mb-5">
                         <thead class="quizR_head">
                             <th>Quiz ID:</th>
                             <th>Date:</th>
@@ -82,18 +82,13 @@
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="col">
                     <h2>{{ user.first_name }}'s Account Info</h2>
                     <div>
-                        <form action="/user/update" method="post" class="mx-auto">
+                        <form action="/user/update" method="post">
                             <input type="hidden" name="id" value="{{ user.id }}">
                             <label>First Name:
                                 <input type="text" name="first_name" value="{{ user.first_name }}">
@@ -121,7 +116,7 @@
                             <label>Company Name:
                                 <input type="text" name="company_name" value="{{ user.company_name }}">
                             </label>
-                            <label>Member Since: {{ user.created_at }}</label>
+                            <p>Member Since: {{ user.created_at }}</p>
                             <input type="submit" class="button" value="Update Account Info">
                         </form>
                     </div>
