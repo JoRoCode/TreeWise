@@ -872,3 +872,9 @@ footer {
     font-weight: 500;
     color: antiquewhite;
 }
+
+.act-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

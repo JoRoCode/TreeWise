@@ -89,35 +89,37 @@
                     <h2>{{ user.first_name }}'s Account Info</h2>
                     <div>
                         <form action="/user/update" method="post">
-                            <input type="hidden" name="id" value="{{ user.id }}">
-                            <label>First Name:
-                                <input type="text" name="first_name" value="{{ user.first_name }}">
-                            </label>
-                            <label>Last Name:
-                                <input type="text" name="last_name" value="{{ user.last_name }}">
-                            </label>
-                            <label>Email:
-                                <input type="email" name="email" value="{{ user.email }}">
-                            </label>
-                            <label>Occupation:
-                                <select name="occupation">
-                                    <option value="{{ user.occupation }}">{{ user.occupation }}</option>
-                                    <option value="Arborist">Arborist</option>
-                                    <option value="Owner">Owner</option>
-                                    <option value="Climber">Climber</option>
-                                    <option value="Groundie">Groundie</option>
-                                    <option value="Landscaper">Landscaper</option>
-                                    <option value="Horticulturist">Horticulturist</option>
-                                    <option value="Sales">Sales</option>
-                                    <option value="Applicator">Applicator</option>
-                                    <option value="Other">Just here for the trees man!!</option>
-                                </select>
-                            </label>
-                            <label>Company Name:
-                                <input type="text" name="company_name" value="{{ user.company_name }}">
-                            </label>
-                            <p>Member Since: {{ user.created_at }}</p>
-                            <input type="submit" class="button" value="Update Account Info">
+                            <div class="col mx-auto">
+                                <input type="hidden" name="id" value="{{ user.id }}">
+                                <label>First Name:
+                                    <input type="text" name="first_name" value="{{ user.first_name }}">
+                                </label>
+                                <label>Last Name:
+                                    <input type="text" name="last_name" value="{{ user.last_name }}">
+                                </label>
+                                <label>Email:
+                                    <input type="email" name="email" value="{{ user.email }}">
+                                </label>
+                                <label>Occupation:
+                                    <select name="occupation">
+                                        <option value="{{ user.occupation }}">{{ user.occupation }}</option>
+                                        <option value="Arborist">Arborist</option>
+                                        <option value="Owner">Owner</option>
+                                        <option value="Climber">Climber</option>
+                                        <option value="Groundie">Groundie</option>
+                                        <option value="Landscaper">Landscaper</option>
+                                        <option value="Horticulturist">Horticulturist</option>
+                                        <option value="Sales">Sales</option>
+                                        <option value="Applicator">Applicator</option>
+                                        <option value="Other">Just here for the trees man!!</option>
+                                    </select>
+                                </label>
+                                <label>Company Name:
+                                    <input type="text" name="company_name" value="{{ user.company_name }}">
+                                </label>
+                                <p>Member Since: {{ user.created_at }}</p>
+                                <input type="submit" class="button" value="Update Account Info">
+                            </div>
                         </form>
                     </div>
                     <div>
