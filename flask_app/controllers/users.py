@@ -33,6 +33,11 @@ def importance():
     if 'user_id' not in session: return redirect('/')
     return render_template('importance.html')
 
+@app.get('/contact')
+def contact():
+    if 'user_id' not in session: return redirect('/')
+    return render_template('contact.html')
+
 
 
 @app.get('/user/account')
