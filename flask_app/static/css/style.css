@@ -838,12 +838,13 @@ input, select {
 
 .form-control {
     background-color: darkgreen;
-    border-color: rgb(1, 32, 46);
+    border: 2px solid rgb(1, 32, 46);
 }
 
 .form-control:focus {
     border: 2px solid lawngreen;
     box-shadow: none;
+    background-color:#0f1b0b;
 }
 
 .form-control::placeholder {
