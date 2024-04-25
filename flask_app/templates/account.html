@@ -45,7 +45,7 @@
             </div>
         </nav>
         <div class="container mx-auto p-5 m-5 rounded-4 opaq_back">
-            <div class="main-info row">
+            <div class="row main-info">
                 <div class="Qresults_sec col mx-1 rounded-4">
                     <h2>{{ session.first_name }}'s Quiz results</h2>
                     <table class="mx-auto mb-5">
@@ -85,11 +85,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col">
+                <div class="col-lg-6">
                     <h2>{{ user.first_name }}'s Account Info</h2>
                     <div>
-                        <form action="/user/update" method="post">
-                            <div class="col mx-auto">
+                        <div class="container">
+                            <form action="/user/update" class="row" method="post">
                                 <input type="hidden" name="id" value="{{ user.id }}">
                                 <label>First Name:
                                     <input type="text" name="first_name" value="{{ user.first_name }}">
@@ -117,13 +117,13 @@
                                 <label>Company Name:
                                     <input type="text" name="company_name" value="{{ user.company_name }}">
                                 </label>
-                                <p>Member Since: {{ user.created_at }}</p>
+                                <h3>Member Since: {{ user.created_at }}</h3>
                                 <input type="submit" class="button" value="Update Account Info">
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                    <div>
-                        <form action="/user/account/delete" method="post">
+                    <div class="container">
+                        <form action="/user/account/delete" class="row" method="post">
                             <input type="hidden" name="id" value="{{ user.id }}">
                             <input type="submit" class="button" value="Delete Account">
                         </form>
