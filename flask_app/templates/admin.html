@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="header">
-        <nav class="navbar navbar-expand-md top-nav">
+        <nav class="navbar navbar-expand-lg top-nav">
             <a href="/home" class="navbar-brand m-0 px-3"><img src="../static/images/cover.png" class="logo" alt="TreeWise Logo" id="logo"></a>
             <div class="container">
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
@@ -45,8 +45,8 @@
             </div>
         </nav>
         <div class="container mx-auto p-5 m-5 rounded-4 opaq_back">
-            <div class="main-info flex">
-                <div class="admin_left">
+            <div class="main-info row">
+                <div class="col-lg-6">
                     <div class="create_tree">
                         <h2>Add Tree To Database</h2>
                         <p>
@@ -130,7 +130,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="admin_right">
+                <div class="col-lg-6">
                     <div class="create_tree">
                         <h2>Update Tree In Database</h2>
                         <form action="/update/tree" method="post" class="block">
@@ -190,9 +190,9 @@
                             <input type="submit" class="button"  value="Edit Tree">
                         </form>
                     </div>
-                    <div>
+                    <div class="container text-center">
                         <h2>Which Tree do you want to Delete?</h2>
-                        <form action="/tree/delete" method="post">
+                        <form action="/tree/delete" class="row" method="post">
                             <label>Select a Tree
                                 <select name="id">
                                     {% for tree in trees %}
