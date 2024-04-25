@@ -105,12 +105,25 @@ class User:
     @classmethod
     def delete_user_account(cls,data):
         id = {'id' : data}
+        
         query = """
+            DELETE FROM
+            comments
+            WHERE comments.user_id = %(id)s;
+            """
+        connectToMySQL(cls.db).query_db(query,id)
+        query2 = """
+            DELETE FROM
+            quizs
+            WHERE quizs.user_id = %(id)s;
+            """
+        connectToMySQL(cls.db).query_db(query2,id)
+        query3 = """
             DELETE FROM
             users
             WHERE id = %(id)s;
             """
-        return connectToMySQL(cls.db).query_db(query,id)
+        return connectToMySQL(cls.db).query_db(query3,id)
         
     
     # login
