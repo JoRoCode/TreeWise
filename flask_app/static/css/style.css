@@ -379,6 +379,10 @@ input, select {
     font-size: 18px;
 }
 
+.tr_space th {
+    padding: 5px 10px;
+}
+
 .tree_picture {
     max-width: 350px;
     opacity: 1;
