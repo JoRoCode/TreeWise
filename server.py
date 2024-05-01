@@ -4,7 +4,7 @@ from flask_app.controllers import users, comments, trees, pictures, quizes #cont
 # This is where Flask's thought process starts. The request enters here, then goes to the controller above which has a matching route.
 
 if __name__=="__main__":   
-    app.run(debug=True) 
+    app.run(debug=False) 
     # app.run(debug=True, port=5500) 
     # Above is how you can change the port number.
 
